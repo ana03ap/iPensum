@@ -2,12 +2,12 @@
 proyecto programación orientado a objetos 2022-1
 
 ## Requerimiento funcional 
-- Permite buscar información dependiento al capo escogido ( Materia, Semetsre específico, etc)
-    -  task 1 
-        Acceder como estudiante o como invitado.
-    - task 2
+- Permite elegir lo que desea buscar ( Materia, Semestre específico, etc)
+    -  Task #1 
+        acceder como estudiante o como invitado.
+    -  Task #2
        validacion de campos vacios cuando se inicia sesión como estudiante.
-    - task 3 
+    -  Task #3 
       desplegar las opciones y escoger a su preferencia.
     - task 4 
       botón de regreso.
