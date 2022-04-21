@@ -7,5 +7,7 @@ task#1
 Access as a guest or log in as a student
 
 <img src="Intento.png" alt="My cool logo"/>
-# My cool project and above is the logo of it
+# Diagrama UML
+
+
 
