@@ -1,0 +1,116 @@
+@startuml "Intento"
+
+skinparam monochrome flase 
+skinparam handwritten false 
+skinparam shadowing true
+skinparam StereotypeABackgroundColor true
+skinparam classAttributeIconSize 0
+
+skinparam class{
+    
+    BackgroundColor Gray
+    BorderColor Black
+    ArrowColor Black
+}
+
+class Persona {
++ nombres : String 
++ apellidos : String
++ tdoc : TDoc 
++ telefono : int
+}
+
+class Estudiante {
++ codigoEstudiantil: codigoEstudiantil
++ semestre: Tsemestre
+}
+
+class MallaCurricular { 
++ materias : List [Materia]
+}
+
+class Materia {
++ codigoM: int 
++ tipoM: String  
++ semestre: Tsemestre
++ nombreMat : String
++ numeroCred : int
++ preferencia: int 
++ mallacurricular: MallaCurricular
+}
+
+
+class Electiva { 
++ nombreElect : Nelectiva
++ tipoM: String
++ preferencia: int
++ semestre: Tsemestre
+}
+
+Class Obligatoria {
++ nombreA: String 
++ tipoM: String
++ preferencia: int
++ semestre : TSemestre
+}
+
+Class ActividadesExtra {
++ tipo: Textra
+}
+
+enum TDoc {
+    Cedula 
+    Tarjeta de identidad
+    Registro civil 
+}
+
+enum TSemestre {
+    Primero
+    Segundo 
+    Tercero
+    Cuarto
+    Quinto
+    Sexto
+    Séptimo
+    Octavo 
+    Noveno 
+    Décimo
+}
+
+enum Textra {
+    Baile
+    Música
+    Deporte
+}
+
+enum Nelectiva {
+
+    Elect. en historia
+    Elect. en humanidades 
+    Elect. ciencias de la vida
+    Elect. en ciencias básicas
+    Elect. básica profesional 
+    Elect. en ética
+    Elect. en ciencias sociales
+    Elect. innovación DLLO y SOC
+    Elect. profesional I 
+    Elect. en redes 
+    Elect. en filosofía
+    Elect. CS de la computación 
+    Elect. gestión informática
+    Elect. profesional II
+    Elect. estudios del Caribe
+    Elect. profesional III
+
+}
+
+
+Estudiante - MallaCurricular
+MallaCurricular " 1   "--- "many" Materia :  < go in 
+Materia "  * " <|--- "  1..*  " Obligatoria
+Materia "1..*    " <|--- "   *" Electiva
+Persona <|-- Estudiante
+Estudiante "1..*" --* "1  " ActividadesExtra
+
+
+@enduml
