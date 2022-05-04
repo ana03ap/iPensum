@@ -37,8 +37,8 @@ class Obligatoria(Materia):
 
 
 #por implementar
-class ActividadesExtra:
-    pass
+class ActividadesExtra(enum):
+  pass  
 
 class Nelectiva(enum):
     pass
@@ -49,7 +49,8 @@ class Textra(enum):
     "Registro civil" ]
 
 class TSemestre(enum):
-    pass
+    #umplementar este para que sean opciones, yo creo que es con listas 
+    TSmestre = [""]
 
 class TDOc(enum):
     pass
