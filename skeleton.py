@@ -2,13 +2,13 @@
 import enum
 
 class Persona():
-    def __init__(self,nombre, apellido, telefono):
+    def __init__(self,nombre: str, apellido: str, telefono: int):
         self.nombre = nombre
         self.apellido = apellido
         self.telefono = telefono
 
 class Estudiante(Persona):
-    def __init(self, codigoEstudiante, semestre):
+    def __init(self, codigoEstudiante: int, semestre):
         self.codigoEstudiante =  codigoEstudiante
         self.semestre = semestre
 

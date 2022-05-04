@@ -3,7 +3,7 @@ from email.mime import image
 import tkinter as tk
 from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
-
+import imagenes
 
 # Propiedades del frame
 ventana = tk.Tk()
@@ -12,38 +12,39 @@ ventana.title("iPensum")
 ventana.resizable(width=0, height=0)
 
 # CARGAR IMAGENES
-inicio = tk.PhotoImage(file="inicio.png")
-main = tk.PhotoImage(file="main.png")
-Busqueda = tk.PhotoImage(file="MenuBusqueda.png")
-busqE = tk.PhotoImage(file="busqE.png")
-botonGuest = tk.PhotoImage(file="botonGuest.png")
-botonStudent = tk.PhotoImage(file="botonStudent.png")
-botonTuerca = tk.PhotoImage(file="botonTuerca.png")
-botonBack = tk.PhotoImage(file="botonBack.png")
-botonMalla = tk.PhotoImage(file="botonMalla.png")
-botonSemestre = tk.PhotoImage(file="botonSemestre.png")
-botonActividades = tk.PhotoImage(file="botonActividades.png")
-botonRating = tk.PhotoImage(file="botonRating.png")
-errorC = tk.PhotoImage(file="CamposVacios.png")
-botonLogin = tk.PhotoImage(file="botonLogin.png")
-Instrucciones = tk.PhotoImage(file="Instrucciones.png")
-botonSeguir = tk.PhotoImage(file="botonSeguirmain.png")
-eleccion = tk.PhotoImage(file="elegirSemestre.png")
-borrar = tk.PhotoImage(file="BotonBorrar.png")
-InvalidCode = tk.PhotoImage(file="codeInvalid.png")
-semPlantilla = tk.PhotoImage(file="semestrePlantilla.png")
-
+inicio = tk.PhotoImage(file="imagenes/inicio.png")#
+#"""
+main = tk.PhotoImage(file="imagenes/main.png")
+Busqueda = tk.PhotoImage(file="imagenes/MenuBusqueda.png")
+busqE = tk.PhotoImage(file="imagenes/busqE.png")
+botonGuest = tk.PhotoImage(file="imagenes/botonGuest.png")
+botonStudent = tk.PhotoImage(file="imagenes/botonStudent.png")
+botonTuerca = tk.PhotoImage(file="imagenes/botonTuerca.png")
+botonBack = tk.PhotoImage(file="imagenes/botonBack.png")
+botonMalla = tk.PhotoImage(file="imagenes/botonMalla.png")
+botonSemestre = tk.PhotoImage(file="imagenes/botonSemestre.png")
+botonActividades = tk.PhotoImage(file="imagenes/botonActividades.png")
+botonRating = tk.PhotoImage(file="imagenes/botonRating.png")
+errorC = tk.PhotoImage(file="imagenes/CamposVacios.png")
+botonLogin = tk.PhotoImage(file="imagenes/botonLogin.png")
+Instrucciones = tk.PhotoImage(file="imagenes/Instrucciones.png")
+botonSeguir = tk.PhotoImage(file="imagenes/botonSeguirmain.png")
+eleccion = tk.PhotoImage(file="imagenes/elegirSemestre.png")
+borrar = tk.PhotoImage(file="imagenes/BotonBorrar.png")
+InvalidCode = tk.PhotoImage(file="imagenes/codeInvalid.png")
+semPlantilla = tk.PhotoImage(file="imagenes/semestrePlantilla.png")
+#"""
 # BOTONES 
-BotonPrimer = tk.PhotoImage(file="BotonPrimer.png")
-BotonSegundo = tk.PhotoImage(file="BotonSegundo.png")
-BotonTercero = tk.PhotoImage(file="BotonTercero.png")
-BotonCuarto = tk.PhotoImage(file="BotonCuarto.png")
-BotonQuinto = tk.PhotoImage(file="BotonQuinto.png")
-BotonSexto = tk.PhotoImage(file="BotonSexto.png")
-BotonSeptimo = tk.PhotoImage(file="BotonSeptimo.png")
-BotonOctavo = tk.PhotoImage(file="BotonOctavo.png")
-BotonNoveno = tk.PhotoImage(file="BotonNoveno.png")
-BotonDecimo = tk.PhotoImage(file="BotonDecimo.png")
+BotonPrimer = tk.PhotoImage(file="imagenes/BotonPrimer.png")
+BotonSegundo = tk.PhotoImage(file="imagenes/BotonSegundo.png")
+BotonTercero = tk.PhotoImage(file="imagenes/BotonTercero.png")
+BotonCuarto = tk.PhotoImage(file="imagenes/BotonCuarto.png")
+BotonQuinto = tk.PhotoImage(file="imagenes/BotonQuinto.png")
+BotonSexto = tk.PhotoImage(file="imagenes/BotonSexto.png")
+BotonSeptimo = tk.PhotoImage(file="imagenes/BotonSeptimo.png")
+BotonOctavo = tk.PhotoImage(file="imagenes/BotonOctavo.png")
+BotonNoveno = tk.PhotoImage(file="imagenes/BotonNoveno.png")
+BotonDecimo = tk.PhotoImage(file="imagenes/BotonDecimo.png")
 
 
 # NOTAAAAAAAA  -> font=("Calibri",14,"bold")
