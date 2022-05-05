@@ -5,6 +5,9 @@ from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
 import imagenes
 import archivos_txt
+import Funcionalidades
+ob=Funcionalidades.Funcions()
+ob.print
 
 
 # Propiedades del frame
@@ -114,7 +117,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
                    width=20, borderwidth=0, font=('Ubuntu', 14, "italic"), validate="key", validatecommand=(ventana.register(validate_code), "%S")).place(x=457, y=352, height=24)
 
     # LEER TXT DE LOGUEO PARA STUDENT
-    filename = ("archivos/txtLogin.txt")
+    filename = ("archivos_txt/txtLogin.txt")
     with open(filename) as file:
         lines = file.readlines()
 
@@ -267,7 +270,7 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
     # ABRIR TXT DE MATERIAS, ESTE ES EL TXT DE LA INFO DE CADA MATERIA EN CADA SEM
         
     txtM = []
-    with open("archivos/txtSemestre.txt") as fname:
+    with open("archivos_txt/txtSemestre.txt") as fname:
         for lineas in fname:
             txtM.append(lineas.split(","))
     i = 0
