@@ -4,6 +4,8 @@ import tkinter as tk
 from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
 import imagenes
+import archivos
+
 
 # Propiedades del frame
 ventana = tk.Tk()
@@ -95,7 +97,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
 
     # VALIDAR QUE SOLO META NÚMEROS AL CODIGO ESTUDIANTIL
     def validate_code(text: str):
-        return text.isdecimal()
+        return text.isdecimal()#verdadero si es numero
 
     # CAMPO DE TEXTO PARA LOGUEARSE
     entradaUser = StringVar()
@@ -106,7 +108,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
                    width=20, borderwidth=0, font=('Ubuntu', 14, "italic"), validate="key", validatecommand=(ventana.register(validate_code), "%S")).place(x=457, y=352, height=24)
 
     # LEER TXT DE LOGUEO PARA STUDENT
-    filename = ("txtLogin.txt")
+    filename = ("archivos/txtLogin.txt")
     with open(filename) as file:
         lines = file.readlines()
 
@@ -246,7 +248,7 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
     # ABRIR TXT DE MATERIAS, ESTE ES EL TXT DE LA INFO DE CADA MATERIA EN CADA SEM
         
     txtM = []
-    with open("txtSemestre.txt") as fname:
+    with open("archivos/txtSemestre.txt") as fname:
         for lineas in fname:
             txtM.append(lineas.split(","))
     i = 0

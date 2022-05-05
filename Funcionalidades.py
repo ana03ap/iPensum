@@ -2,6 +2,7 @@
 import tkinter as tk
 
 class funcions():
+    # codigo para validar 
     def login(entradaUser,entradaCode,ventana,errorC, txtL,MenuBusqueda, InvalidCode):
         user = entradaUser.get()
         code = entradaCode.get()
@@ -18,4 +19,8 @@ class funcions():
                                  borderwidth=0, width=194)
                 # sino, el sale una advertencia
                 Error.place(x=440, y=394, height=45)
+
+    #código para validar  los campos están vacios
+    # 
+    #  
     
