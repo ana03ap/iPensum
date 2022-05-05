@@ -3,7 +3,7 @@ from email.mime import image
 import tkinter as tk
 from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
-import Imagenes
+import imagenes
 
 # Propiedades del frame
 ventana = tk.Tk()
@@ -112,7 +112,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
                    width=20, borderwidth=0, font=('Ubuntu', 14, "italic"), validate="key", validatecommand=(ventana.register(validate_code), "%S")).place(x=457, y=352, height=24)
 
     # LEER TXT DE LOGUEO PARA STUDENT
-    filename = ("archivos/txtLogin.txt")
+    filename = ("archivos_txt/txtLogin.txt")
     with open(filename) as file:
         lines = file.readlines()
 
@@ -328,7 +328,7 @@ def MenuRating(): #Menu de rating zone
     tk.Button(ventana, image=borrar, command=close, borderwidth=0,
               width=50, height=50, cursor="heart").place(x=10, y=3)
     
-    with open("Archivos txt/txtRating.txt") as fname:
+    with open("archivos_txt/txtRating.txt") as fname:
         lines = fname.readlines()
     string =" ".join([str(item) for item in lines])
     tk.Label(ventana, bg = "white", text= string, width = 30, height= 8, font=("Calibri",20,"italic")).place(x=0,y=190)
