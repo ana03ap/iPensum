@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
 import imagenes
-import archivos
+import archivos_txt
 
 
 # Propiedades del frame
@@ -35,6 +35,8 @@ eleccion = tk.PhotoImage(file="imagenes/elegirSemestre.png")
 borrar = tk.PhotoImage(file="imagenes/BotonBorrar.png")
 InvalidCode = tk.PhotoImage(file="imagenes/codeInvalid.png")
 semPlantilla = tk.PhotoImage(file="imagenes/semestrePlantilla.png")
+menuExtra = tk.PhotoImage(file = "imagenes/MenuExtra.png")
+menuRating = tk.PhotoImage (file = "imagenes/menuRating.png")
 #"""
 # BOTONES 
 BotonPrimer = tk.PhotoImage(file="imagenes/BotonPrimer.png")
@@ -57,14 +59,14 @@ def MainMenu(): #PRINCIPAL
     fondo = tk.Label(ventana, image=inicio).place(x=0, y=0)  # FRAME
     # BOTON PARA INICIAR
     botonS = tk.Button(ventana, image=botonSeguir, width=80,
-                       command=Menu1, borderwidth=0, cursor="heart")
+                       command=MenuInicial, borderwidth=0, cursor="heart")
     botonS.place(x=767, y=384, height=76)
 
     # Create a Button to call close()
     tk.Button(ventana, image=borrar, command=close, borderwidth=0,
               width=50, height=50, cursor="heart").place(x=800, y=29)
 
-def Menu1():  # La manera en la que desea ingresar (GUEST OR STUDENT)
+def MenuInicial():  # La manera en la que desea ingresar (GUEST OR STUDENT)
     for ele in ventana.winfo_children():
         ele.destroy()
     interfaz = tk.Canvas(ventana)
@@ -85,6 +87,10 @@ def Menu1():  # La manera en la que desea ingresar (GUEST OR STUDENT)
     botonT = tk.Button(ventana, image=botonTuerca, width=44,
                        borderwidth=0, command=MenuInstrucciones, cursor="heart")
     botonT.place(x=786, y=20, height=52)
+    # Create a Button to call close()
+    tk.Button(ventana, image=borrar, command=close, borderwidth=0,
+              width=50, height=50, cursor="heart").place(x=10, y=3)
+
 
 def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LOGUEO-
 
@@ -143,8 +149,12 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
 
     # BACK TO MAIN
     botonB = tk.Button(ventana, image=botonBack, width=60,
-                       command=Menu1, borderwidth=0, cursor="heart")
+                       command=MenuInicial, borderwidth=0, cursor="heart")
     botonB.place(x=750, y=11, height=69)
+    
+    # Create a Button to call close()
+    tk.Button(ventana, image=borrar, command=close, borderwidth=0,
+              width=50, height=50, cursor="heart").place(x=10, y=3)
 
 def MenuBusqueda():  # En este menu, puede elegir que desea buscar 
     for ele in ventana.winfo_children():
@@ -165,17 +175,21 @@ def MenuBusqueda():  # En este menu, puede elegir que desea buscar
 
     # RETURN ACTIVIDADES EXTRACURRICULARES
     botonA = tk.Button(ventana, image=botonActividades,
-                       width=310, borderwidth=0, cursor="heart")
+                       width=310, borderwidth=0, command = MenuActividades, cursor="heart")
     botonA.place(x=482, y=350, height=40)
     # RETURN RATING ZONE
     botonR = tk.Button(ventana, image=botonRating, width=140,
-                       borderwidth=0, cursor="heart")
+                       borderwidth=0, cursor="heart", command = MenuRating)
     botonR.place(x=480, y=389, height=45)
 
     # BACK TO MAIN
     botonB = tk.Button(ventana, image=botonBack, width=60,
-                       command=Menu1, borderwidth=0, cursor="heart")
+                       command=MenuInicial, borderwidth=0, cursor="heart")
     botonB.place(x=750, y=11, height=72)
+    
+    # Create a Button to call close()
+    tk.Button(ventana, image=borrar, command=close, borderwidth=0,
+              width=50, height=50, cursor="heart").place(x=10, y=3)
 
 def MenuEleccionSemestre():  # Elección de semestre que desea ver
     for ele in ventana.winfo_children():
@@ -226,10 +240,15 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
                             height=89, command=MenuSemestre, borderwidth=0, cursor="heart")
     botonDecimo.place(x=583, y=338)
 
-    # BACK TO MENU4 (LO QUE QUIERE BUSCAR)
+    #Back to menu de busqueda, para buscar algo de nuevo 
     botonB = tk.Button(ventana, image=botonBack, width=60,
                        command=MenuBusqueda, borderwidth=0, cursor="heart")
     botonB.place(x=750, y=11, height=72)
+    
+    # Create a Button to call close()
+    tk.Button(ventana, image=borrar, command=close, borderwidth=0,
+              width=50, height=50, cursor="heart").place(x=10, y=3)
+    
 
 def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información acerca de esto
     for ele in ventana.winfo_children():
@@ -271,7 +290,50 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
     print (string)
     tk.Label(ventana, bg = "white", text=string,width = 90, height=2, font=("Calibri",14,"italic")).place(x=0,y=380)
     ##############################################
+    
+    # Create a Button to call close()
+    tk.Button(ventana, image=borrar, command=close, borderwidth=0,
+              width=50, height=50, cursor="heart").place(x=10, y=3)
 
+def MenuActividades (): #Menu de actividades extracurriculares 
+    for ele in ventana.winfo_children():
+        ele.destroy()
+    interfaz = tk.Canvas(ventana)
+    interfaz.pack()
+    label1 = tk.Label(interfaz, image= menuExtra)
+    label1.pack()
+    
+    
+    # BACK TO MAIN
+    botonB = tk.Button(ventana, image=botonBack, width=60,
+                       command=MenuBusqueda, borderwidth=0, cursor="heart")
+    botonB.place(x=750, y=11, height=69)
+    
+    # Create a Button to call close()
+    tk.Button(ventana, image=borrar, command=close, borderwidth=0,
+              width=50, height=50, cursor="heart").place(x=10, y=3)
+    
+def MenuRating(): #Menu de rating zone 
+    for ele in ventana.winfo_children():
+            ele.destroy()
+    interfaz = tk.Canvas(ventana)
+    interfaz.pack()
+    label1 = tk.Label(interfaz, image= menuRating)
+    label1.pack()
+    
+    # BACK TO MAIN
+    botonB = tk.Button(ventana, image=botonBack, width=60,
+                       command=MenuBusqueda, borderwidth=0, cursor="heart")
+    botonB.place(x=750, y=11, height=69)
+    
+    # Create a Button to call close()
+    tk.Button(ventana, image=borrar, command=close, borderwidth=0,
+              width=50, height=50, cursor="heart").place(x=10, y=3)
+    
+    with open("archivos_txt/txtRating.txt") as fname:
+        lines = fname.readlines()
+    string =" ".join([str(item) for item in lines])
+    tk.Label(ventana, bg = "white", text= string, width = 30, height= 8, font=("Calibri",20,"italic")).place(x=0,y=190)
 
 def MenuInstrucciones():  # Instrucciones de la app
 
@@ -284,7 +346,7 @@ def MenuInstrucciones():  # Instrucciones de la app
 
     # Boton back
     botonB = tk.Button(ventana, image=botonBack, width=60,
-                       command=Menu1, borderwidth=0, cursor="heart")
+                       command=MenuInicial, borderwidth=0, cursor="heart")
     botonB.place(x=11, y=11, height=72)
 
 def close():   # Cerrar ventana en donde estemos
@@ -303,8 +365,6 @@ def MenuMalla (): #Menu cuando haya elegido que desea ver la malla
     
 '''
 
-# def MenuActividades ():
-# def MenuRating():
 
 MainMenu()
 ventana.mainloop()
