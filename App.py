@@ -3,7 +3,7 @@ from email.mime import image
 import tkinter as tk
 from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
-import imagenes
+import Imagenes
 
 # Propiedades del frame
 ventana = tk.Tk()
