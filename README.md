@@ -1,5 +1,5 @@
 # iPensum
-Proyecto Programación Orientado a Objetos 2022-1
+Proyecto Programación Orientada a Objetos 2022-1
 
 ## Requerimiento funcional 
 - Permite elegir lo que desea buscar (Materia, Semestre específico, etc)
