@@ -328,7 +328,7 @@ def MenuRating(): #Menu de rating zone
     tk.Button(ventana, image=borrar, command=close, borderwidth=0,
               width=50, height=50, cursor="heart").place(x=10, y=3)
     
-    with open("archivos/txtRating.txt") as fname:
+    with open("Archivos txt/txtRating.txt") as fname:
         lines = fname.readlines()
     string =" ".join([str(item) for item in lines])
     tk.Label(ventana, bg = "white", text= string, width = 30, height= 8, font=("Calibri",20,"italic")).place(x=0,y=190)
