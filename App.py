@@ -278,8 +278,8 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
     sem = []
     for lines in lineas:
         # ES IGUAL A XXXX SEMESTRE (SIRVE CON TODOS)
-        if txtM[i][1] == "Sexto semestre":
-            sem.append(txtM[i])
+        if txtM[i][1] == "Sexto semestre":## aquí se va a reemplazar por la variable semestre
+            sem.append(txtM[i])              # la cual significa en qué botón seleccionó para imprimir 
             i = i+1
             sw = 0
         else:

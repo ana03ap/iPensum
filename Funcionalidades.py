@@ -1,7 +1,7 @@
 #funcionalidades del programa 
 import tkinter as tk
 
-class Funcions():
+class Funtions():
     # codigo para validar 
     def __init__(self):
         pass
@@ -31,7 +31,10 @@ class Funcions():
     def validate_code(self,text: str):
         return text.isdecimal()#verdadero si es numero  
     
-    def imprimir_label(self,ventana):
+
+    # para abrir el archivo y que imprima dependiendo al semestre selecionado
+    def imprimirSemestre(self,ventana, semestre:str): #la varia semestre es la que me dice en qué semetsre se oprimió.
+
          # ABRIR TXT DE MATERIAS, ESTE ES EL TXT DE LA INFO DE CADA MATERIA EN CADA SEM 
         txtM = []
         with open("archivos/txtSemestre.txt") as fname:
@@ -42,7 +45,7 @@ class Funcions():
         sem = []
         for lines in lineas:
             # ES IGUAL A XXXX SEMESTRE (SIRVE CON TODOS)
-            if txtM[i][1] == "Sexto semestre":
+            if txtM[i][1] == semestre:
                 sem.append(txtM[i])
                 i = i+1
                 sw = 0
@@ -58,3 +61,6 @@ class Funcions():
         tk.Label(ventana, bg = "white", text=string,width = 90, height=2, font=("Calibri",14,"italic")).place(x=0,y=380)
         ##############################################
      
+     #para imprimir los labes de rating, actividades, etc
+    def imprimirLabel(self):
+         pass
