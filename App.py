@@ -4,6 +4,11 @@ import tkinter as tk
 from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
 import imagenes
+import archivos_txt
+import Funcionalidades
+ob=Funcionalidades.Funcions()
+ob.print
+
 
 # Propiedades del frame
 ventana = tk.Tk()
@@ -102,7 +107,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
 
     # VALIDAR QUE SOLO META NÚMEROS AL CODIGO ESTUDIANTIL
     def validate_code(text: str):
-        return text.isdecimal()
+        return text.isdecimal()#verdadero si es numero
 
     # CAMPO DE TEXTO PARA LOGUEARSE
     entradaUser = StringVar()
@@ -274,8 +279,8 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
     sem = []
     for lines in lineas:
         # ES IGUAL A XXXX SEMESTRE (SIRVE CON TODOS)
-        if txtM[i][1] == "Sexto semestre":
-            sem.append(txtM[i])
+        if txtM[i][1] == "Sexto semestre":## aquí se va a reemplazar por la variable semestre
+            sem.append(txtM[i])              # la cual significa en qué botón seleccionó para imprimir 
             i = i+1
             sw = 0
         else:

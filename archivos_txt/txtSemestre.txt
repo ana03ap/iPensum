@@ -1,8 +1,8 @@
-Algebra Lineal,Primer semestre,MAT1031,Obligatoria,3
-Introduccion a la Ingenieria de sistemas,Primer semestre,IST0010,Obligatoria,1
-Calculo I,Primer semestre,MAT1101,Obligatoria,5
-Algoritmia y programacion I,Primer semestre,IST2088,Obligatoria,3
-Competencias comunicativas I,Primer semestre,CAS3020,Obligatoria,3
+Algebra Lineal,Primer semestre,  MAT1031  ,Obligatoria  ,3
+Introduccion a la Ingenieria de sistemas  ,Primer semestre,  IST0010  ,Obligatoria  ,1
+Calculo I                                 ,Primer semestre,  MAT1101  ,Obligatoria,  5
+Algoritmia y programacion I               ,Primer semestre,  IST2088,  Obligatoria,  3
+Competencias comunicativas I              ,Primer semestre,  CAS3020,  Obligatoria,  3
 Electiva en Historia,Segundo semestre,ELG1140,Electiva,3
 Competencias comunicativas II,Segundo semestre,CAS3030,Obligatoria,3
 Fisica mecanica,Segundo semestre,FIS1023,Obligatoria,4
