@@ -6,8 +6,6 @@ from cv2 import split
 import imagenes
 import archivos_txt
 import Funcionalidades
-ob=Funcionalidades.Funcions()
-ob.print
 
 
 # Propiedades del frame
@@ -43,7 +41,7 @@ botonMalla = tk.PhotoImage(file="imagenes/botonMalla.png")
 botonSemestre = tk.PhotoImage(file="imagenes/botonSemestre.png")
 botonActividades = tk.PhotoImage(file="imagenes/botonActividades.png")
 botonRating = tk.PhotoImage(file="imagenes/botonRating.png")
-# Botones para el semestre 
+# Botones para el semestre
 BotonPrimer = tk.PhotoImage(file="imagenes/BotonPrimer.png")
 BotonSegundo = tk.PhotoImage(file="imagenes/BotonSegundo.png")
 BotonTercero = tk.PhotoImage(file="imagenes/BotonTercero.png")
@@ -54,7 +52,6 @@ BotonSeptimo = tk.PhotoImage(file="imagenes/BotonSeptimo.png")
 BotonOctavo = tk.PhotoImage(file="imagenes/BotonOctavo.png")
 BotonNoveno = tk.PhotoImage(file="imagenes/BotonNoveno.png")
 BotonDecimo = tk.PhotoImage(file="imagenes/BotonDecimo.png")
-
 
 
 def MainMenu():  # PRINCIPAL
@@ -107,7 +104,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
 
     # VALIDAR QUE SOLO META NÚMEROS AL CODIGO ESTUDIANTIL
     def validate_code(text: str):
-        return text.isdecimal()#verdadero si es numero
+        return text.isdecimal()  # verdadero si es numero
 
     # CAMPO DE TEXTO PARA LOGUEARSE
     entradaUser = StringVar()
@@ -316,14 +313,15 @@ def MenuActividades():  # Menu de actividades extracurriculares
     # Create a Button to call close()
     tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
               width=50, height=50, cursor="heart").place(x=10, y=3)
-    
+
     # Imprimir la información del txt como string
     with open("archivos_txt/txtActividadesExtra.txt") as fname:
         lines = fname.readlines()
     # Conver list to str
     string = "".join([str(item) for item in lines])
-    tk.Label(ventana, bg="white", text= string, width=50, height=10,
+    tk.Label(ventana, bg="white", text=string, width=50, height=10,
              font=("Brown-courier", 14, "italic"), justify="left").place(x=310, y=218)
+
 
 def MenuRating():  # Menu de rating zone
     for ele in ventana.winfo_children():
