@@ -5,8 +5,8 @@ from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
 import imagenes
 import archivos_txt
-import Funcionalidades
-
+from Funcionalidades import *
+ob = Functions()
 
 # Propiedades del frame
 ventana = tk.Tk()
@@ -260,12 +260,12 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
     interfaz.pack()
     label1 = tk.Label(interfaz, image=semPlantilla)
     label1.pack()
-
+    #string=semestre
     # BACK TO MENU ESCOGENCIA (LO QUE QUIERE BUSCAR)
     botonB = tk.Button(ventana, image=botonBack, width=60,
                        command=MenuEleccionSemestre, borderwidth=0, cursor="heart")
     botonB.place(x=757, y=7, height=72)
-
+    #ob.imprimirSemestre(ventana,"Primer Semestre")
     ''''
     txtM = []
     with open("archivos_txt/txtSemestre.txt") as fname:

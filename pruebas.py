@@ -1,5 +1,8 @@
 from pickletools import stringnl_noescape_pair
 from tkinter import *
+from tkinter import font
+
+from cv2 import BORDER_WRAP
 # de aquí importo todo ## esto es supuestame te una mala practica
 from Funcionalidades import *
 import tkinter as tk
@@ -37,41 +40,17 @@ def imprimirSemestre(ventana, semestre: str):
             if sw == 1:
                 i = i+1
         #############################################
-        """
-            w=0
-            for l in sem:
-                string=""
-                for j in sem[w]:#listas una a una
-                    string += j + "\n"
-                    tk.Label(ventana, bg = "white", text=string,width = 90, height=5, font=("Calibri",14,"italic")).place(x=30,y=30)
-                w=w+1
-
-
-        print (sem)#lista de listas de primer semestre
-        print("VAMOS A IMPRIMIR EL SEMESTRE")
-        string=""
-        string2=""
-        string= f"\tMateria Semestre Código Tipo Creditos\n\t{string2.join(sem[0])}\n\t{string2.join(sem[1])}\n\t{string2.join(sem[2])}\n\t{string2.join(sem[3])}"
         
-        #print (*sem)
-        #for nav in sem:
-           # string += nav + "\n"
-        #string = " ".join([str(item) for item in sem])
-        string
-        print ("")
-        print ("")
-        print (string)
-        tk.Label(ventana, bg = "white", text=string,width = 70, justify="left", height=10, font=("Calibri",14,"italic")).place(x=0,y=0)
-        ##############################################
-"""
+
 # probando con una tabla para que se vea más ordenado
 
-    tv = ttk.Treeview(ventana, columns=("Código", "Tipo", "Créditos"))
-
+    tv = ttk.Treeview(ventana, columns=("Código", "Tipo", "Créditos"), selectmode="none")
+    
+   
     i = 0
     j = 2
 
-    tv.column("#0", width=170)
+    tv.column("#0", width=250)
     tv.column("Código", width=80, anchor=CENTER)
     tv.column("Tipo", width=80, anchor=CENTER)
     tv.column("Créditos", width=80, anchor=CENTER)
@@ -101,10 +80,6 @@ def imprimirSemestre(ventana, semestre: str):
         tv.insert(
             "", END, text=sem[i+5][0], values=(sem[i+5][j], sem[i+5][j+1], sem[i+5][j+2]))
 
-    elif semestre == 'Cuarto semestre':
-        # el primer valor va en código, segundo en tió y así )
-        tv.insert(
-            "", END, text=sem[i+5][0], values=(sem[i+5][j], sem[i+5][j+1], sem[i+5][j+2]))
     elif semestre == 'Quinto semestre':
         tv.insert(
             "", END, text=sem[i+5][0], values=(sem[i+5][j], sem[i+5][j+1], sem[i+5][j+2]))
