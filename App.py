@@ -212,7 +212,7 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
 
     # BOTON PRIMER SEMESTRE
     botonPrimer = tk.Button(ventana, image=BotonPrimer, width=90,
-                            height=85, command=MenuSemestre, borderwidth=0, cursor="heart")
+                            height=85, command=MenuSemestre("Primer semestre"), borderwidth=0, cursor="heart")
     botonPrimer.place(x=190, y=250)
     # BOTON SEGUNDO SEMESTRE
     botonSegundo = tk.Button(ventana, image=BotonSegundo,
@@ -261,7 +261,7 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
               width=50, height=50, cursor="heart").place(x=10, y=3)
 
 
-def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información acerca de esto
+def MenuSemestre(semestre):  # Dependiendo de que semestre escoga, saldrá información acerca de esto
     for ele in ventana.winfo_children():
         ele.destroy()
     interfaz = tk.Canvas(ventana)
@@ -277,13 +277,10 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
 
 
  # para imprimir los labes de rating, actividades, etc
-
-
-    
     # Create a Button to call close()
     tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
               width=50, height=50, cursor="heart").place(x=10, y=3)
-    ob.imprimirSemestre(label1,"Segundo semestre")#metodo de funciones para imprimir info de cada sem
+    ob.imprimirSemestre(label1,semestre)#metodo de funciones para imprimir info de cada sem
 
 '''
 def MenuMalla (): #Menu cuando haya elegido que desea ver la malla 
