@@ -1,12 +1,19 @@
 import code
+from contextlib import nullcontext
 from email.mime import image
 import tkinter as tk
 from tkinter import Entry, Menu, StringVar, Widget, font
 from cv2 import split
+from numpy import mat
 import imagenes
 import archivos_txt
 from Funcionalidades import *
+
+
 ob = Functions()
+
+
+
 
 # Propiedades del frame
 ventana = tk.Tk()
@@ -41,6 +48,7 @@ botonMalla = tk.PhotoImage(file="imagenes/botonMalla.png")
 botonSemestre = tk.PhotoImage(file="imagenes/botonSemestre.png")
 botonActividades = tk.PhotoImage(file="imagenes/botonActividades.png")
 botonRating = tk.PhotoImage(file="imagenes/botonRating.png")
+botonAgg = tk.PhotoImage(file = "imagenes/agg.png")
 # Botones para el semestre
 BotonPrimer = tk.PhotoImage(file="imagenes/BotonPrimer.png")
 BotonSegundo = tk.PhotoImage(file="imagenes/BotonSegundo.png")
@@ -260,42 +268,29 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
     interfaz.pack()
     label1 = tk.Label(interfaz, image=semPlantilla)
     label1.pack()
-    #string=semestre
+
+    
     # BACK TO MENU ESCOGENCIA (LO QUE QUIERE BUSCAR)
     botonB = tk.Button(ventana, image=botonBack, width=60,
                        command=MenuEleccionSemestre, borderwidth=0, cursor="heart")
     botonB.place(x=757, y=7, height=72)
-    #ob.imprimirSemestre(ventana,"Primer Semestre")
-    ''''
-    txtM = []
-    with open("archivos_txt/txtSemestre.txt") as fname:
-        for lineas in fname:
-            txtM.append(lineas.split(","))
-    i = 0
-    sw = 1
-    sem = []
-    for lines in lineas:
-        # ES IGUAL A XXXX SEMESTRE (SIRVE CON TODOS)
-        if txtM[i][1] == "Sexto semestre":## aquí se va a reemplazar por la variable semestre
-            sem.append(txtM[i])              # la cual significa en qué botón seleccionó para imprimir 
-            i = i+1
-            sw = 0
-        else:
-            if sw == 1:
-                i = i+1
-        #############################################
-    print (sem)
-    string = " ".join([str(item) for item in sem[0]])
-    print ("")
-    print ("")
-    print (string)
-    tk.Label(ventana, bg = "white", text=string,width = 90, height=2, font=("Calibri",14,"italic")).place(x=0,y=380)
-    ##############################################
-    '''
+    ob.imprimirSemestre(ventana,"Primer semestre")
     # Create a Button to call close()
     tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
               width=50, height=50, cursor="heart").place(x=10, y=3)
 
+
+
+'''
+def MenuMalla (): #Menu cuando haya elegido que desea ver la malla 
+    for ele in ventana.winfo_children():
+        ele.destroy()
+    interfaz = tk.Canvas(ventana)
+    interfaz.pack()
+    label1 = tk.Label(interfaz, image= #debe ser malla)
+    label1.pack()
+    
+'''
 
 def MenuActividades():  # Menu de actividades extracurriculares
     for ele in ventana.winfo_children():
@@ -345,10 +340,23 @@ def MenuRating():  # Menu de rating zone
         lines = fname.readlines()
     # Conver list to str
     string = "• ".join([str(item) for item in lines])
-    tk.Label(ventana, bg="gray77", text="• "+string, width=30, height=8,
-             font=("Brown-courier", 14, "italic"), justify="left").place(x=190, y=257)
-
-
+    tk.Label(ventana, bg="gray77", text="• "+string, width=30, height=6,
+             font=("Brown-courier", 14, "italic"), justify="left").place(x=80, y=257)
+    
+    
+    def agrega ():
+        mat = entrada.get()
+        if mat != "":
+             lstMaterias.insert(END,entrada.get())
+        
+  
+    lstMaterias = Listbox(ventana, width=33, height = 8, bg = "gray77", relief = GROOVE, bd=0, font=('Ubuntu',12, "italic"));
+    lstMaterias.place (x=490,y=270)
+    entrada = StringVar()
+    
+    txtMateria = Entry(ventana,textvariable=entrada,width=24, bg = "gray61", borderwidth=0, font=('Ubuntu', 12, "italic"), fg = "gray20").place (x=525, y= 235)
+    btnAgregar = Button (ventana, image = botonAgg, height=40,width=40,command=agrega, borderwidth=0).place(x=750, y=226)
+    
 def MenuInstrucciones():  # Instrucciones de la app
 
     for ele in ventana.winfo_children():
@@ -371,17 +379,6 @@ def close():   # Cerrar ventana en donde estemos
     # ventana.destroy()
     ventana.quit()
 
-
-'''
-def MenuMalla (): #Menu cuando haya elegido que desea ver la malla 
-    for ele in ventana.winfo_children():
-        ele.destroy()
-    interfaz = tk.Canvas(ventana)
-    interfaz.pack()
-    label1 = tk.Label(interfaz, image= #debe ser malla)
-    label1.pack()
-    
-'''
 
 
 MainMenu()

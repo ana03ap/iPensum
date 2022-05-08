@@ -38,9 +38,9 @@ class Functions():
     
 
     # para abrir el archivo y que imprima dependiendo al semestre selecionado
-    def imprimirSemestre(ventana, semestre: str):
-
+    def imprimirSemestre(self, ventana, semestre: str):
         from tkinter import ttk
+        
         # ABRIR TXT DE MATERIAS, ESTE ES EL TXT DE LA INFO DE CADA MATERIA EN CADA SEM
         txtM = []
         with open("archivos_txt/txtSemestre.txt") as fname:
@@ -116,8 +116,20 @@ class Functions():
                 "", END, text=sem[i+6][0], values=(sem[i+6][j], sem[i+6][j+1], sem[i+6][j+2]))
 
         tv.pack()
-    def imprimirLabel(self):
-         pass
+        print ("hola")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 """"
 inicializamos la clase
