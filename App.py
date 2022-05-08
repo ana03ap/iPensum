@@ -268,18 +268,22 @@ def MenuSemestre():  # Dependiendo de que semestre escoga, saldrá información 
     interfaz.pack()
     label1 = tk.Label(interfaz, image=semPlantilla)
     label1.pack()
-
+    semestre=""
     
     # BACK TO MENU ESCOGENCIA (LO QUE QUIERE BUSCAR)
     botonB = tk.Button(ventana, image=botonBack, width=60,
                        command=MenuEleccionSemestre, borderwidth=0, cursor="heart")
     botonB.place(x=757, y=7, height=72)
-    ob.imprimirSemestre(ventana,"Primer semestre")
+
+
+ # para imprimir los labes de rating, actividades, etc
+
+
+    
     # Create a Button to call close()
     tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
               width=50, height=50, cursor="heart").place(x=10, y=3)
-
-
+    ob.imprimirSemestre(label1,"Segundo semestre")#metodo de funciones para imprimir info de cada sem
 
 '''
 def MenuMalla (): #Menu cuando haya elegido que desea ver la malla 

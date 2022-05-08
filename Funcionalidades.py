@@ -1,6 +1,8 @@
-#funcionalidades del programa 
+# funcionalidades del programa
 import tkinter as tk
 from tkinter import *
+
+
 class Functions():
     # codigo para validar
     """ 
@@ -10,15 +12,17 @@ class Functions():
         self.ventana = ventana
         self.errorC =  errorC
         self.text=text
-""" 
+"""
+
     def printear(self):
         print("hola")
-        
-    def login(self,entradaUser,entradaCode,ventana,errorC, txtL,MenuBusqueda, InvalidCode):
+
+    def login(self, entradaUser, entradaCode, ventana, errorC, txtL, MenuBusqueda, InvalidCode):
         self.user = self.entradaUser.get()
         self.code = self.entradaCode.get()
         if(self.user == "" or self.code == ""):  # Campos vacios
-            self.Error = tk.Label(ventana, image=errorC, borderwidth=0, width=190)
+            self.Error = tk.Label(ventana, image=errorC,
+                                  borderwidth=0, width=190)
             self.Error.place(x=447, y=394, height=45)
 
         else:  # sino esta vacio
@@ -32,15 +36,15 @@ class Functions():
                 Error.place(x=440, y=394, height=45)
 
     # VALIDAR QUE SOLO META NÚMEROS AL CODIGO ESTUDIANTIL
-    #menu logeo
+    # menu logeo
     def validate_code(self, text: str):
-        return self.text.isdecimal()#verdadero si es numero  
-    
+        return self.text.isdecimal()  # verdadero si es numero
 
     # para abrir el archivo y que imprima dependiendo al semestre selecionado
-    def imprimirSemestre(self, ventana, semestre: str):
+
+    def imprimirSemestre(self, label1, semestre: str):
         from tkinter import ttk
-        
+
         # ABRIR TXT DE MATERIAS, ESTE ES EL TXT DE LA INFO DE CADA MATERIA EN CADA SEM
         txtM = []
         with open("archivos_txt/txtSemestre.txt") as fname:
@@ -49,7 +53,6 @@ class Functions():
         i = 0
         sw = 1
         sem = []  # lista de listas, cada index es una materia con todas sus caracteristicas
-        # print(sem[5])
 
         for lines in lineas:
             # ES IGUAL A XXXX SEMESTRE (SIRVE CON TODOS)
@@ -60,14 +63,13 @@ class Functions():
             else:
                 if sw == 1:
                     i = i+1
-            #############################################
             
 
     # probando con una tabla para que se vea más ordenado
 
-        tv = ttk.Treeview(ventana, columns=("Código", "Tipo", "Créditos"), selectmode="none")
-        
-    
+        tv = ttk.Treeview(label1, columns=("Código", "Tipo", "Créditos"),
+                          selectmode="none", cursor="heart")
+
         i = 0
         j = 2
 
@@ -86,16 +88,16 @@ class Functions():
             sem[i][j], sem[0][j+1], sem[0][j+2]))
         # el primer valor va en código, segundo en tió y así )
         tv.insert("", END, text=sem[i+1][0],
-                values=(sem[i+1][j], sem[i+1][j+1], sem[i+1][j+2]))
+                  values=(sem[i+1][j], sem[i+1][j+1], sem[i+1][j+2]))
         # el primer valor va en código, segundo en tió y así )
         tv.insert("", END, text=sem[i+2][0],
-                values=(sem[i+2][j], sem[i+2][j+1], sem[i+2][j+2]))
+                  values=(sem[i+2][j], sem[i+2][j+1], sem[i+2][j+2]))
         # el primer valor va en código, segundo en tió y así )
         tv.insert("", END, text=sem[i+3][0],
-                values=(sem[i+3][j], sem[i+3][j+1], sem[i+3][j+2]))
+                  values=(sem[i+3][j], sem[i+3][j+1], sem[i+3][j+2]))
         # el primer valor va en código, segundo en tió y así )
         tv.insert("", END, text=sem[i+4][0],
-                values=(sem[i+4][j], sem[i+4][j+1], sem[i+4][j+2]))
+                  values=(sem[i+4][j], sem[i+4][j+1], sem[i+4][j+2]))
 
         if semestre == 'Cuarto semestre':
             tv.insert(
@@ -114,21 +116,8 @@ class Functions():
                 "", END, text=sem[i+5][0], values=(sem[i+5][j], sem[i+5][j+1], sem[i+5][j+2]))
             tv.insert(
                 "", END, text=sem[i+6][0], values=(sem[i+6][j], sem[i+6][j+1], sem[i+6][j+2]))
-
-        tv.pack()
-        print ("hola")
-
-
-
-
-
-
-
-
-
-
-
-
+        tv.place(x=80,y=210)
+        #tv.pack()
 
 
 """"

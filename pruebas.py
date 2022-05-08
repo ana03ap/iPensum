@@ -98,7 +98,7 @@ def imprimirSemestre(ventana, semestre: str):
  # para imprimir los labes de rating, actividades, etc
 
 
-imprimirSemestre(ventana, "Noveno semestre")
+imprimirSemestre(ventana, "Tercer semestre")
 
 ventana.mainloop()
 # SEM ES UNA LISTA DE LISTAS
