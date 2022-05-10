@@ -62,6 +62,7 @@ class Functions():
                 sw = 0
                 if i == 54:
                     verificar = 1;
+                print (sem)
             else:
                 if sw == 1: #cuando es x semestre, sw=1 pero i sigue iterando 
                     i = i+1
@@ -73,7 +74,6 @@ class Functions():
                           selectmode="none", cursor="heart")
 
         i = 0
-        j = 2
 
         tv.column("#0", width=250)
         tv.column("Código", width=80, anchor=CENTER)
@@ -98,7 +98,7 @@ class Functions():
         tv.insert("", END, text=sem[i+3][0],
                   values=(sem[i+3][j], sem[i+3][j+1], sem[i+3][j+2]))
         # el primer valor va en código, segundo en tió y así )
-        tv.insert("", END, text=sem[4][0],
+        tv.insert("", END, text=sem[i+4][0],
                   values=(sem[i+4][j], sem[i+4][j+1], sem[i+4][j+2]))
 
         if semestre == 'Cuarto semestre':
