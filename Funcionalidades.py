@@ -52,18 +52,20 @@ class Functions():
                 txtM.append(lineas.split(","))
         i = 0
         sw = 1
+        verificar = 0
         sem = []  # lista de listas, cada index es una materia con todas sus caracteristicas
-
         for lines in lineas:
             # ES IGUAL A XXXX SEMESTRE (SIRVE CON TODOS)
-            if txtM[i][1] == semestre:
+            if txtM[i][1] == semestre and verificar == 0:
                 sem.append(txtM[i])
-                i = i+1
+                i = i+1 #entra a la lista de x semestre y empieza a iterar dentro 
                 sw = 0
+                if i == 54:
+                    verificar = 1;
             else:
-                if sw == 1:
+                if sw == 1: #cuando es x semestre, sw=1 pero i sigue iterando 
                     i = i+1
-            
+ 
 
     # probando con una tabla para que se vea más ordenado
 
@@ -96,7 +98,7 @@ class Functions():
         tv.insert("", END, text=sem[i+3][0],
                   values=(sem[i+3][j], sem[i+3][j+1], sem[i+3][j+2]))
         # el primer valor va en código, segundo en tió y así )
-        tv.insert("", END, text=sem[i+4][0],
+        tv.insert("", END, text=sem[4][0],
                   values=(sem[i+4][j], sem[i+4][j+1], sem[i+4][j+2]))
 
         if semestre == 'Cuarto semestre':

@@ -34,8 +34,8 @@ Electiva en etica,Septimo semestre,ELG1170,Electiva,3
 Optimizacion,Septimo semestre,IST7420,Obligatoria,3
 Sistemas operacionales,Septimo semestre,IST7081,Obligatoria,3
 Estructura del computador II,Septimo semestre,IST7102,Obligatoria,3
-Diseño de Software I,Septimo semestre,IST7121,Obligatoria,3
-Diseño de Software II,Octavo semestre,IST7122,Obligatoria,3
+Diseno de Software I,Septimo semestre,IST7121,Obligatoria,3
+Diseno de Software II,Octavo semestre,IST7122,Obligatoria,3
 Compiladores,Octavo semestre,IST7410,Obligatoria,3
 Electiva en ciencias sociales,Octavo semestre,ELG1190,Electiva,3
 Electiva innovacion DLLO y SOC,Octavo semestre,ELG8400,Electiva,3
