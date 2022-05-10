@@ -32,6 +32,7 @@ def imprimirSemestre(ventana, semestre: str):
 
     for lines in lineas:
         # ES IGUAL A XXXX SEMESTRE (SIRVE CON TODOS)
+        print(txtM[i][1])
         if txtM[i][1] == semestre:
             sem.append(txtM[i])
             i = i+1

@@ -47,7 +47,7 @@ Electiva de gestion informatica,Noveno semestre,ELG1304,Electiva,3
 Electiva profesional II,Noveno semestre,ELG1305,Electiva,3
 Formacion complementaria libre I,Noveno semestre,ELP4030,Obligatoria,3
 Examen comprehensivo II,Noveno semestre,IIN4319,Obligatoria,0
-Seminario de carrera I,Noveno semestre,IST4380,Obligatoria,0
+Seminario de carrera II,Noveno semestre,IST4380,Obligatoria,0
 Formación complementaria libre II,Decimo semestre,ELP8090,Obligatoria,3
 Electiva estudios del caribe,Decimo semestre,ELG1180,Electiva,3
 Proyecto Final,Decimo semestre,INV7363,Obligatoria,3
