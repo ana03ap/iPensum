@@ -1,0 +1,55 @@
+Algebra Lineal,Primer semestre,  MAT1031  ,Obligatoria  ,3
+Introduccion a la Ingenieria de sistemas  ,Primer semestre,  IST0010  ,Obligatoria  ,1
+Calculo I,Primer semestre,  MAT1101  ,Obligatoria, 5
+Algoritmia y programacion I,Primer semestre,  IST2088,  Obligatoria, 3
+Competencias comunicativas I,Primer semestre,  CAS3020,  Obligatoria, 3
+Electiva en Historia,Segundo semestre,ELG1140,Electiva,3
+Competencias comunicativas II,Segundo semestre,CAS3030,Obligatoria,3
+Fisica mecanica,Segundo semestre,FIS1023,Obligatoria,4
+Calculo II,Segundo semestre,MAT1111,Obligatoria,4
+Algoritmia y programacion II,Segundo semestre,IST2089,Obligatoria,3
+Estructura de datos I,Tercer semestre,IST4021,Obligatoria,3
+Fisica calor ondas,Tercer semestre,FIS1043,Obligatoria,4
+Programacion orientada a objetos,Tercer semestre,IST2110,Obligatoria,3
+Calculo III,Tercer semestre,MAT1121,Obligatoria,4
+Electiva en humanidades,Tercer semestre,ELG1130,Electiva,3
+Electiva en ciencias de la vida,Cuarto semestre,ELG1150,Electiva,3
+Ecuaciones diferenciales,Cuarto semestre,MAT4011,Obligatoria,3
+Matematicas discretas,Cuarto semestre,MAT4021,Obligatoria,3
+Fisica electricidad,Cuarto semestre,FIS1033,Obligatoria,4
+Estructura de datos II,Cuarto semestre,IST4031,Obligatoria,3
+Seminario de carrera I,Cuarto semestre,IST4370,Obligatoria,0
+Electiva en ciencias basicas,Quinto semestre,ELG0007,Electiva,3 
+Analisis de datos en ingenieria I,Quinto semestre,EST7042,Obligatoria,4
+Algortimo y complejidad,Quinto semestre,IST4310,Obligatoria,3
+Diseño digital,Quinto semestre,IST7072,Obligatoria,3
+Examen comprehensivo I,Quinto semestre,IIN4311,Obligatoria,0
+Estructuras discretas,Quinto semestre,IST4330,Obligatoria,3
+Redes de computacion,Sexto semestre,IST7191,Obligatoria,3
+Estructura del computador I,Sexto semestre,IST4012,Obligatoria,3
+Electiva basica profesional,Sexto semestre,ELG0008,Electiva,3
+Sol. computacionales a problemas de Ing.,Sexto semestre,IST4360,Obligatoria,3
+Bases de datos,Sexto semestre,IST7111,Obligatoria,3
+Electiva en etica,Septimo semestre,ELG1170,Electiva,3
+Optimizacion,Septimo semestre,IST7420,Obligatoria,3
+Sistemas operacionales,Septimo semestre,IST7081,Obligatoria,3
+Estructura del computador II,Septimo semestre,IST7102,Obligatoria,3
+Diseno de Software I,Septimo semestre,IST7121,Obligatoria,3
+Diseno de Software II,Octavo semestre,IST7122,Obligatoria,3
+Compiladores,Octavo semestre,IST7410,Obligatoria,3
+Electiva en ciencias sociales,Octavo semestre,ELG1190,Electiva,3
+Electiva innovacion DLLO y SOC,Octavo semestre,ELG8400,Electiva,3
+Electiva profesional I,Octavo semestre,ELG1301,Electiva,3
+Electiva en redes,Octavo semestre,ELG1302,Electiva,2
+Electiva en filosofia,Noveno semestre,ELG1160,Electiva,3
+Electiva CS de la computacion,Noveno semestre,ELG1303,Electiva,3
+Electiva de gestion informatica,Noveno semestre,ELG1304,Electiva,3
+Electiva profesional II,Noveno semestre,ELG1305,Electiva,3
+Formacion complementaria libre I,Noveno semestre,ELP4030,Obligatoria,3
+Examen comprehensivo II,Noveno semestre,IIN4319,Obligatoria,0
+Seminario de carrera I,Noveno semestre,IST4380,Obligatoria,0
+Formación complementaria libre II,Decimo semestre,ELP8090,Obligatoria,3
+Electiva estudios del caribe,Decimo semestre,ELG1180,Electiva,3
+Proyecto Final,Decimo semestre,INV7363,Obligatoria,3
+Electiva Profesional III,Decimo semestre,ELG1306,Electiva,3
+Seminario de carrera II,Decimo semestre,IST4380,Obligatoria,0
