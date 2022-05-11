@@ -12,7 +12,7 @@
 3,Cálculo III - Vectorial
 3,Física calor ondas
 3,Estructura de datos I
-3,Programación orientada a objetos 
+3,Programacion orientada a objetos
 4,Electivas en ciencias de la vida
 4,Ecuaciones diferenciales
 4,Física electricidad
@@ -37,7 +37,7 @@
 7,Estructura del computador II
 8,Electiva en ciencias sociales
 8,Electiva profesional II
-8,Diseño de software II
+8,Diseno de software II
 8,Electiva en redes
 8,Compiladores
 8,Electiva en Innovación,Dllo. y Sociedad
