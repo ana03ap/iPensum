@@ -18,7 +18,7 @@ class Login():# no sirve
         self.errorC =  errorC
 <<<<<<< HEAD
         self.text=text
-"""
+    """
 
     def printear(self):
         print("hola")
