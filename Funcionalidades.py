@@ -308,7 +308,11 @@ class Rating():
         string = "• ".join([str(item) for item in lines])
         tk.Label(ventana, bg="gray77", text="• " + string, width=30, height=6,
             font=("Bahnschrift SemiBold SemiConden", 15), justify="left").place(x=80, y=257)
-    
+            
+    def agrega(entrada,lstMaterias):  # función para que las personas escriban sus materias preferidas y las agreguen
+        mat = entrada.get()
+        if mat != "":
+            lstMaterias.insert(END, entrada.get())
 
 >>>>>>> abe1d9b (classes)
 
