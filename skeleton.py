@@ -13,7 +13,8 @@ class Estudiante(Persona):
         self.semestre = semestre
 
 class MallaCurricular:
-    pass
+    #ListMat[]
+    ...
 
 class Materia:
     def __init__(self, codigoM, tipoM, semestre, nombreMat, numeroCred, preferencia):
