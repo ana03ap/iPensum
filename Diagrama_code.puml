@@ -1,4 +1,4 @@
-@startuml "Intento"
+@startuml "UML Project"
 
 skinparam monochrome flase 
 skinparam handwritten false 
@@ -8,26 +8,17 @@ skinparam classAttributeIconSize 0
 
 skinparam class{
     
-    BackgroundColor Gray
+    BackgroundColor bab
     BorderColor Black
     ArrowColor Black
 }
 
-class Persona {
-+ nombres : String 
-+ apellidos : String
-+ tdoc : TDoc 
-+ telefono : int
-}
 
 class Estudiante {
-+ codigoEstudiantil: codigoEstudiantil
-+ semestre: Tsemestre
++ codigoEstudiantil: int 
+Verifycode()
 }
 
-class MallaCurricular { 
-+ materias : List [Materia]
-}
 
 class Materia {
 + codigoM: int 
@@ -35,35 +26,40 @@ class Materia {
 + semestre: Tsemestre
 + nombreMat : String
 + numeroCred : int
-+ preferencia: int 
 + mallacurricular: MallaCurricular
 }
 
+Class MallaCurricular { 
++ materias : List [Materia]
+PrintMalla()
+}
 
-class Electiva { 
+Class Semester {
+
+Search()
+PrintSemester()
+}
+
+
+Class Electiva { 
 + nombreElect : Nelectiva
 + tipoM: String
-+ preferencia: int
-+ semestre: Tsemestre
 }
 
 Class Obligatoria {
 + nombreA: String 
 + tipoM: String
-+ preferencia: int
-+ semestre : TSemestre
 }
 
 Class ActividadesExtra {
-+ tipo: Textra
++ tipo: Textra 
+PrintActivities()
 }
 
-enum TDoc {
-    Cedula 
-    Tarjeta de identidad
-    Registro civil 
+Class Rating {
+Recommendation()
+AddSubject()
 }
-
 enum TSemestre {
     Primero
     Segundo 
@@ -79,7 +75,6 @@ enum TSemestre {
 
 enum Textra {
     Baile
-    Música
     Deporte
 }
 
@@ -109,8 +104,10 @@ Estudiante - MallaCurricular
 MallaCurricular " 1   "--- "many" Materia :  < go in 
 Materia "  * " <|--- "  1..*  " Obligatoria
 Materia "1..*    " <|--- "   *" Electiva
-Persona <|-- Estudiante
+Materia "1..*    " <|--- "   *" Semester
 Estudiante "1..*" --* "1  " ActividadesExtra
+Materia - Rating
+
 
 
 @enduml
