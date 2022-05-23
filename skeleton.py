@@ -1,4 +1,5 @@
 #definición de clase
+"""
 import enum
 
 class Persona():
@@ -38,7 +39,7 @@ class Obligatoria(Materia):
 
 
 #por implementar
-class ActividadesExtra(enum):
+class ActividadesExtra():
   pass  
 
 class Nelectiva(enum):
@@ -59,6 +60,6 @@ class TDOc(enum):
 
 
 
-
+"""
 
 
