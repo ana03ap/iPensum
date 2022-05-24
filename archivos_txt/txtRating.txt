@@ -1,7 +1,0 @@
-Redes de alta velocidad            
-Sistemas operativos                 
-Algoritmia y programacion II            
-Programacion orientada a objetos      
-Algortimia y programacion I             
-Bases de datos                          
-Estructura de datos I                   
