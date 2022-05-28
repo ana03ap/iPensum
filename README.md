@@ -15,6 +15,7 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 ## Are you ready?
 ### Basic functionalities of the app
 Choose the option that you want to look for
-<img src="dataRM/busqueda.png" alt="Searching"/>
 
-
+<div align="center">
+<img src="dataRM/busqueda.png" alt="Searching" style="width: 90%;"/>
+</div><br/>
