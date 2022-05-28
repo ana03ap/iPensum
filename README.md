@@ -14,6 +14,7 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 <div align="center">
 <img src="dataRM/iPensum.gif" alt="demo" style="width: 80%;"/>
 </div><br/>
+
 ### Class diagram
 <div align="center">
 <img src="dataRM/DiagramaPhoto.png" alt="classDiagram" style="width: 80%;"/>
