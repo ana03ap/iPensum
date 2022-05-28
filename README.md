@@ -41,5 +41,5 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 ### - Observe the best subjects and add yours 
 <div align="center">
-<img src="dataRM/bestSubjects.png" alt="bestSubjects" style="width: 80%;"/>
+<img src="dataRM/bestS.png" alt="bestSubjects" style="width: 80%;"/>
 </div><br/>
