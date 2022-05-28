@@ -60,44 +60,7 @@ Class Rating {
 Recommendation()
 AddSubject()
 }
-enum TSemestre {
-    Primero
-    Segundo 
-    Tercero
-    Cuarto
-    Quinto
-    Sexto
-    Séptimo
-    Octavo 
-    Noveno 
-    Décimo
-}
 
-enum Textra {
-    Baile
-    Deporte
-}
-
-enum Nelectiva {
-
-    Elect. en historia
-    Elect. en humanidades 
-    Elect. ciencias de la vida
-    Elect. en ciencias básicas
-    Elect. básica profesional 
-    Elect. en ética
-    Elect. en ciencias sociales
-    Elect. innovación DLLO y SOC
-    Elect. profesional I 
-    Elect. en redes 
-    Elect. en filosofía
-    Elect. CS de la computación 
-    Elect. gestión informática
-    Elect. profesional II
-    Elect. estudios del Caribe
-    Elect. profesional III
-
-}
 
 
 Estudiante - MallaCurricular

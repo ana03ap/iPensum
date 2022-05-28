@@ -1,17 +1,13 @@
-import code
-from contextlib import nullcontext
-from email.mime import image
+#se importan las librerías necesarias
 import tkinter as tk
 from tkinter import Entry, Menu, StringVar, Widget, font
-from cv2 import split
-from numpy import mat
-import imagenes
-import archivos_txt
-from Funcionalidades import *
+from Funcionalidades import MallaCurricular, Rating, Actividades, Semestre, Estudiantes
 
-
-ob = Functions()
-
+#instanciar objetos 
+Malla = MallaCurricular() 
+Rating = Rating()
+Actividades = Actividades()
+Semestre = Semestre()
 
 
 
@@ -31,15 +27,20 @@ errorC = tk.PhotoImage(file="imagenes/CamposVacios.png")
 botonLogin = tk.PhotoImage(file="imagenes/botonLogin.png")
 Instrucciones = tk.PhotoImage(file="imagenes/Instrucciones.png")
 botonSeguir = tk.PhotoImage(file="imagenes/botonSeguirmain.png")
-eleccion = tk.PhotoImage(file="imagenes/elegirSemestre.png")
 borrar = tk.PhotoImage(file="imagenes/BotonBorrar.png")
 Cerrar = tk.PhotoImage(file="imagenes/BotonClose.png")
 InvalidCode = tk.PhotoImage(file="imagenes/codeInvalid.png")
-semPlantilla = tk.PhotoImage(file="imagenes/semestrePlantilla.png")
 menuExtra = tk.PhotoImage(file="imagenes/menuExtra.png")
 menuRating = tk.PhotoImage(file="imagenes/menuRating.png")
+menuEleccion = tk.PhotoImage(file="imagenes/menuEleccion.png")
+Warning = tk.PhotoImage(file="imagenes/warning.png")
+Twarning = tk.PhotoImage(file="imagenes/taparWarning.png")
+menuMalla = tk.PhotoImage(file="imagenes/menuMalla.png")
+menuMalla2 = tk.PhotoImage(file="imagenes/menuMalla2.png")
+menuMalla3 = tk.PhotoImage(file="imagenes/menuMalla3.png")
 
 # BOTONES
+botonGo = tk.PhotoImage(file="imagenes/botonGo.png")
 botonGuest = tk.PhotoImage(file="imagenes/botonGuest.png")
 botonStudent = tk.PhotoImage(file="imagenes/botonStudent.png")
 botonTuerca = tk.PhotoImage(file="imagenes/botonTuerca.png")
@@ -49,17 +50,7 @@ botonSemestre = tk.PhotoImage(file="imagenes/botonSemestre.png")
 botonActividades = tk.PhotoImage(file="imagenes/botonActividades.png")
 botonRating = tk.PhotoImage(file="imagenes/botonRating.png")
 botonAgg = tk.PhotoImage(file = "imagenes/agg.png")
-# Botones para el semestre
-BotonPrimer = tk.PhotoImage(file="imagenes/BotonPrimer.png")
-BotonSegundo = tk.PhotoImage(file="imagenes/BotonSegundo.png")
-BotonTercero = tk.PhotoImage(file="imagenes/BotonTercero.png")
-BotonCuarto = tk.PhotoImage(file="imagenes/BotonCuarto.png")
-BotonQuinto = tk.PhotoImage(file="imagenes/BotonQuinto.png")
-BotonSexto = tk.PhotoImage(file="imagenes/BotonSexto.png")
-BotonSeptimo = tk.PhotoImage(file="imagenes/BotonSeptimo.png")
-BotonOctavo = tk.PhotoImage(file="imagenes/BotonOctavo.png")
-BotonNoveno = tk.PhotoImage(file="imagenes/BotonNoveno.png")
-BotonDecimo = tk.PhotoImage(file="imagenes/BotonDecimo.png")
+botonCheck = tk.PhotoImage(file="imagenes/BotonCheck.png")
 
 
 def MainMenu():  # PRINCIPAL
@@ -120,7 +111,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
                   width=20, borderwidth=0, font=('Ubuntu', 14, "italic")).place(x=457, y=279, height=24)
     entradaCode = StringVar()
     campo2 = Entry(ventana, textvariable=entradaCode,
-                   width=20, borderwidth=0, font=('Ubuntu', 14, "italic"), validate="key", validatecommand=(ventana.register(validate_code), "%S")).place(x=457, y=352, height=24)
+                   width=20, borderwidth=0, font=('Ubuntu', 14, "italic"), validate="key", validatecommand=(ventana.register(Estudiantes.validar_cod), "%S")).place(x=457, y=352, height=24)
 
     # LEER TXT DE LOGUEO PARA STUDENT
     filename = ("archivos_txt/txtLogin.txt")
@@ -207,49 +198,52 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
         ele.destroy()
     interfaz = tk.Canvas(ventana)
     interfaz.pack()
-    label1 = tk.Label(interfaz, image=eleccion)
+    label1 = tk.Label(interfaz, image=menuEleccion)
     label1.pack()
 
-    # BOTON PRIMER SEMESTRE
-    botonPrimer = tk.Button(ventana, image=BotonPrimer, width=90,
-                            height=85, command=MenuSemestre("Primer semestre"), borderwidth=0, cursor="heart")
-    botonPrimer.place(x=190, y=250)
-    # BOTON SEGUNDO SEMESTRE
-    botonSegundo = tk.Button(ventana, image=BotonSegundo,
-                             width=90, height=89, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonSegundo.place(x=290, y=245)
-    # BOTON TERCER SEMESTRE
-    botonTercero = tk.Button(ventana, image=BotonTercero,
-                             width=95, height=87, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonTercero.place(x=387, y=247)
-    # BOTON CUARTO SEMESTRE
-    botonCuarto = tk.Button(ventana, image=BotonCuarto, width=95,
-                            height=85, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonCuarto.place(x=480, y=247)
-    # BOTON QUINTO SEMESTRE
-    botonQuinto = tk.Button(ventana, image=BotonQuinto, width=90,
-                            height=87, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonQuinto.place(x=580, y=246)
-    # BOTON SEXTO SEMESTRE
-    botonSexto = tk.Button(ventana, image=BotonSexto, width=90,
-                           height=89, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonSexto.place(x=184, y=338)
-    # BOTON SEPTIMO SEMESTRE
-    botonSeptimo = tk.Button(ventana, image=BotonSeptimo, width=85,
-                             height=89, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonSeptimo.place(x=290, y=338)
-    # BOTON OCTAVO SEMESTRE
-    botonOctavo = tk.Button(ventana, image=BotonOctavo, width=87,
-                            height=87, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonOctavo.place(x=388, y=338)
-    # BOTON NOVENO SEMESTRE
-    botonNoveno = tk.Button(ventana, image=BotonNoveno, width=90,
-                            height=87, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonNoveno.place(x=488, y=340)
-    # BOTON DECIMO SEMESTRE
-    botonDecimo = tk.Button(ventana, image=BotonDecimo, width=92,
-                            height=89, command=MenuSemestre, borderwidth=0, cursor="heart")
-    botonDecimo.place(x=583, y=338)
+    def getTextInput():
+        sw = 0
+        result = entrada.get()  # entrada que ingresa el usuario
+        if result == "":  # aca valido que no este vacio
+            Error = tk.Label(ventana, image=Warning, borderwidth=0)
+            Error.place(x=400, y=240, height=30)
+
+            sw = 1
+        if result != "Primer semestre" and result != "Segundo semestre" and result != "Tercer semestre" and result != "Cuarto semestre" and result != "Quinto semestre" and result != "Sexto semestre" and result != "Septimo semestre" and result != "Sexto semestre" and result != "Septimo semestre" and result != "Octavo semestre" and result != "Noveno semestre" and result != "Decimo semestre" and result != "null":
+            # aca valido que si este entre primer y decimo semestre
+            Error = tk.Label(ventana, image=Warning, borderwidth=0)
+            Error.place(x=400, y=240, height=30)
+            sw = 1
+        if sw == 0:
+            tapar = tk.Label(ventana, image=Twarning, borderwidth=0)
+            tapar.place(x=400, y=240, height=30)
+            if result == "Primer semestre":
+                # se crea la tabla por semestre ingresado
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Segundo semestre":
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Tercer semestre":
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Cuarto semestre":
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Quinto semestre":
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Sexto semestre":
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Septimo semestre":
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Octavo semestre":
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Noveno semestre":
+                Semestre.imprimirSemestre(label1, result)
+            elif result == "Decimo semestre":
+                Semestre.imprimirSemestre(label1, result)
+
+    entrada = StringVar()
+    semestreOP = Entry(ventana, textvariable=entrada, width=45, bg="gray62", borderwidth=0,
+                       font=('Bahnschrift SemiBold SemiConden', 14), fg="black").place(x=145, y=187, height=45)
+    tk.Button(ventana, height=49, width=57, image=botonCheck, borderwidth=0,
+              command=getTextInput).place(x=85, y=185)
 
     # Back to menu de busqueda, para buscar algo de nuevo
     botonB = tk.Button(ventana, image=botonBack, width=60,
@@ -261,37 +255,8 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
               width=50, height=50, cursor="heart").place(x=10, y=3)
 
 
-def MenuSemestre(semestre):  # Dependiendo de que semestre escoga, saldrá información acerca de esto
-    for ele in ventana.winfo_children():
-        ele.destroy()
-    interfaz = tk.Canvas(ventana)
-    interfaz.pack()
-    label1 = tk.Label(interfaz, image=semPlantilla)
-    label1.pack()
-    semestre=""
-    
-    # BACK TO MENU ESCOGENCIA (LO QUE QUIERE BUSCAR)
-    botonB = tk.Button(ventana, image=botonBack, width=60,
-                       command=MenuEleccionSemestre, borderwidth=0, cursor="heart")
-    botonB.place(x=757, y=7, height=72)
 
 
- # para imprimir los labes de rating, actividades, etc
-    # Create a Button to call close()
-    tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
-              width=50, height=50, cursor="heart").place(x=10, y=3)
-    ob.imprimirSemestre(label1,semestre)#metodo de funciones para imprimir info de cada sem
-
-'''
-def MenuMalla (): #Menu cuando haya elegido que desea ver la malla 
-    for ele in ventana.winfo_children():
-        ele.destroy()
-    interfaz = tk.Canvas(ventana)
-    interfaz.pack()
-    label1 = tk.Label(interfaz, image= #debe ser malla)
-    label1.pack()
-    
-'''
 
 def MenuActividades():  # Menu de actividades extracurriculares
     for ele in ventana.winfo_children():
