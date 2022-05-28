@@ -1,4 +1,4 @@
-              <img src="icon.png" alt="iPensum"/>
+<img src="icon.png" alt="iPensum"/>
 
 ## ¿Qué puedes hacer como usuario en iPensum?
 - Permite elegir lo que desea buscar (Materia, Semestre específico, etc)
