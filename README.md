@@ -11,3 +11,6 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 ### Class diagram
 <img src="DiagramaPhoto.png" alt="Diagrama"/>
+
+## Are you ready?
+
