@@ -10,6 +10,9 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 4. `Add` your favorites subjects that `draw` your attention
 5. Look the curricular subjects of the career
 
+## Demo
+
+[![Demo](ipensum/ipensum.gif)](https://github.com/ana03ap/iPensum/)
 
 ### Class diagram
 <div align="center">
