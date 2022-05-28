@@ -22,7 +22,7 @@ Seminario de carrera I,Cuarto semestre,IST4370,Obligatoria,0
 Electiva en ciencias basicas,Quinto semestre,ELG0007,Electiva,3 
 Analisis de datos en ingenieria I,Quinto semestre,EST7042,Obligatoria,4
 Algortimo y complejidad,Quinto semestre,IST4310,Obligatoria,3
-Diseño digital,Quinto semestre,IST7072,Obligatoria,3
+Diseno digital,Quinto semestre,IST7072,Obligatoria,3
 Examen comprehensivo I,Quinto semestre,IIN4311,Obligatoria,0
 Estructuras discretas,Quinto semestre,IST4330,Obligatoria,3
 Redes de computacion,Sexto semestre,IST7191,Obligatoria,3
@@ -48,7 +48,7 @@ Electiva profesional II,Noveno semestre,ELG1305,Electiva,3
 Formacion complementaria libre I,Noveno semestre,ELP4030,Obligatoria,3
 Examen comprehensivo II,Noveno semestre,IIN4319,Obligatoria,0
 Seminario de carrera II,Noveno semestre,IST4380,Obligatoria,0
-Formación complementaria libre II,Decimo semestre,ELP8090,Obligatoria,3
+Formacion complementaria libre II,Decimo semestre,ELP8090,Obligatoria,3
 Electiva estudios del caribe,Decimo semestre,ELG1180,Electiva,3
 Proyecto Final,Decimo semestre,INV7363,Obligatoria,3
 Electiva Profesional III,Decimo semestre,ELG1306,Electiva,3
