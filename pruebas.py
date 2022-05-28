@@ -9,6 +9,7 @@ import tkinter as tk
 ventana = tk.Tk()
 ventana.geometry("870x500+230+100")
 ventana.title("iPensum")
+print ("Hola")
 #ventana.resizable(width=0, height=0)
 
 # funcionalidades = Functions() #objeto de la clase Functions
