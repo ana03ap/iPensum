@@ -17,7 +17,7 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 </div><br/>
 
 # Are you ready?
-## Basic functionalities of the app
+### Basic functionalities of the app
 
 - Choose the option that you want to look for
 <div align="center">
