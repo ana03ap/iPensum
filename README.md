@@ -1,4 +1,6 @@
-<img src="dataRM/icon.png" alt="iPensum"/>
+<div align="center">
+<img src="dataRM/icon.png" alt="iPensum" style="width: 90%;"/>
+</div><br/>
 
 ### What iPensum allows you to do?
 iPensum will give you an unforgettable experience, where you as a user would be able to:
