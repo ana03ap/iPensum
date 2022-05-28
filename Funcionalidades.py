@@ -185,6 +185,98 @@ class MallaCurricular:
         string = "• ".join([str(item) for item in sem])
         return string
 
+class Semestre():
+    semestre = ["Primero",
+                "Segundo",
+                "Tercero",
+                "Cuarto",
+                "Quinto",
+                "Sexto",
+                "Séptimo",
+                "Octavo",
+                "Noveno",
+                "Décimo"]
+
+    def imprimirSemestre(self, label1, semestre: str):
+        from tkinter import ttk
+        # ABRIR TXT DE MATERIAS, ESTE ES EL TXT DE LA INFO DE CADA MATERIA EN CADA SEM
+        txtM = []
+        with open("archivos_txt/txtSemestre.txt") as fname:
+            for lineas in fname:
+                txtM.append(lineas.split(","))
+        i = 0
+        sw = 1
+        sem = []  # lista de listas, cada index es una materia con todas sus caracteristicas
+
+        for lines in txtM:
+            # ES IGUAL A XXXX SEMESTRE (SIRVE CON TODOS)
+            if txtM[i][1] == semestre:
+                sem.append(txtM[i])
+                i = i+1  # entra a la lista de x semestre y empieza a iterar dentro
+                sw = 0
+            else:
+                if sw == 1:  # cuando es x semestre, sw=1 pero i sigue iterando
+                    i = i+1
+
+        # imprimir con una tabla
+
+        tv = ttk.Treeview(label1, columns=("Código", "Tipo", "Créditos"),
+                          selectmode="none", cursor="heart", height=6, show="tree headings", style="Foo2.Treeview")
+        i = 0
+        tv.column("#0", width=250)
+        tv.column("Código", width=80, anchor=CENTER)
+        tv.column("Tipo", width=80, anchor=CENTER)
+        tv.column("Créditos", width=80, anchor=CENTER)
+
+        tv.heading("#0", text="Materia", anchor=CENTER)
+        tv.heading("Código", text="Código", anchor=CENTER)
+        tv.heading("Tipo", text="Tipo", anchor=CENTER)
+        tv.heading("Créditos", text="Créditos", anchor=CENTER)
+        j = 2
+        # el primer valor va en código, segundo en tipo etc
+        tv.insert("", END, text=sem[i][0], values=(
+            sem[i][j], sem[0][j+1], sem[0][j+2]))
+        # el primer valor va en código, segundo en tipo etc
+        tv.insert("", END, text=sem[i+1][0],
+                  values=(sem[i+1][j], sem[i+1][j+1], sem[i+1][j+2]))
+        # el primer valor va en código, segundo en tipo etc
+        tv.insert("", END, text=sem[i+2][0],
+                  values=(sem[i+2][j], sem[i+2][j+1], sem[i+2][j+2]))
+        # el primer valor va en código, segundo en tipo etc
+        tv.insert("", END, text=sem[i+3][0],
+                  values=(sem[i+3][j], sem[i+3][j+1], sem[i+3][j+2]))
+        # el primer valor va en código, segundo en tipo etc
+        tv.insert("", END, text=sem[i+4][0],
+                  values=(sem[i+4][j], sem[i+4][j+1], sem[i+4][j+2]))
+
+        # estos semestres tiene más materias por lo que se agrega otra fila
+        if semestre == 'Cuarto semestre':
+            tv.insert(
+                "", END, text=sem[i+5][0], values=(sem[i+5][j], sem[i+5][j+1], sem[i+5][j+2]))
+
+        elif semestre == 'Quinto semestre':
+            tv.insert(
+                "", END, text=sem[i+5][0], values=(sem[i+5][j], sem[i+5][j+1], sem[i+5][j+2]))
+
+        elif semestre == 'Octavo semestre':
+            tv.insert(
+                "", END, text=sem[i+5][0], values=(sem[i+5][j], sem[i+5][j+1], sem[i+5][j+2]))
+
+        elif semestre == 'Noveno semestre':
+            tv.insert(
+                "", END, text=sem[i+5][0], values=(sem[i+5][j], sem[i+5][j+1], sem[i+5][j+2]))
+            tv.insert(
+                "", END, text=sem[i+6][0], values=(sem[i+6][j], sem[i+6][j+1], sem[i+6][j+2]))
+        tv.place(x=200, y=270)
+
+        style = ttk.Style()
+        style.theme_use("clam")
+        style.configure("Treeview",
+                        background="silver",
+                        foreground="black",
+                        rowheight=30,
+                        fieldbackground="silver")
+
 class Actividades():
     def imprimirActividades(ventana):
         with open("archivos_txt/txtActividadesExtra.txt") as fname:
@@ -194,9 +286,34 @@ class Actividades():
         tk.Label(ventana, bg="white", text=string, width=50, height=10,
              font=("Bahnschrift SemiBold Condensed", 16), justify="left").place(x=310, y=218)
 
+class Rating():  # clase rating pero cre
+    def imprimirRating(self, ventana):
+        # Imprimir la información del txt como string
+        with open("archivos_txt/txtRating.txt") as fname:
+            lines = fname.readlines()
+     # Conver list to str
+        string = "• ".join([str(item) for item in lines])
+        tk.Label(ventana, bg="gray77", text="• " + string, width=30, height=6,
+                 font=("Bahnschrift SemiBold SemiConden", 15), justify="left").place(x=80, y=257)
 
- 
-     
+        # revisar
+    def agregar(self, ventana, botonAgg):
+
+        def agrega():  # función para que las personas escriban sus materias preferidas y las agreguen
+            mat = entrada.get()
+            if mat != "":
+                lstMaterias.insert(END, entrada.get())
+
+        lstMaterias = Listbox(ventana, width=33, height=8, bg="gray77",
+                              relief=FLAT, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 12))
+        lstMaterias.place(x=490, y=270)
+
+        entrada = StringVar()
+        txtMateria = Entry(ventana, textvariable=entrada, width=24, bg="gray61", borderwidth=0, font=(
+            'Bahnschrift Light Condensed', 12), fg="gray10").place(x=525, y=235)
+        btnAgregar = Button(ventana, image=botonAgg, height=40,
+                            width=40, command=agrega(), borderwidth=0).place(x=750, y=226)
+
 class Materia:
     def __init__(self, codigoM, tipoM, semestre, nombreMat, numeroCred, preferencia):
         self.codigoM = codigoM

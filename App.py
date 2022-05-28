@@ -1,5 +1,6 @@
 #se importan las librerías necesarias
 import tkinter as tk
+from tkinter import *
 from tkinter import Entry, Menu, StringVar, Widget, font
 from Funcionalidades import MallaCurricular, Rating, Actividades, Semestre, Estudiantes
 
@@ -255,6 +256,101 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
               width=50, height=50, cursor="heart").place(x=10, y=3)
 
 
+def MenuMalla():  # Menu cuando haya elegido que desea ver la malla
+    for ele in ventana.winfo_children():
+        ele.destroy()
+    interfaz = tk.Canvas(ventana)
+    interfaz.pack()
+    label1 = tk.Label(interfaz, image=menuMalla)
+    label1.pack()
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("1"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=160)
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("2"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=160)
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("3"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=340)
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("4"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=340)
+
+    # Back to menu de busqueda, para buscar algo de nuevo
+    botonB = tk.Button(ventana, image=botonBack, width=60,
+                       command=MenuBusqueda, borderwidth=0, cursor="heart")
+    botonB.place(x=747, y=11, height=69)
+
+    # Create a Button to call close()
+    tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
+              width=35, height=40, cursor="heart").place(x=6, y=3)
+
+    # Go to other plantilla
+    botonB = tk.Button(ventana, image=botonGo, width=60,
+                       borderwidth=0, cursor="heart", command=MenuMalla2)
+    botonB.place(x=806, y=22, height=55)
+
+
+def MenuMalla2():  # Menu cuando haya elegido que desea ver la malla
+    for ele in ventana.winfo_children():
+        ele.destroy()
+    interfaz = tk.Canvas(ventana)
+    interfaz.pack()
+    label1 = tk.Label(interfaz, image=menuMalla2)
+    label1.pack()
+
+    # los labels tienen los nombres del semestre correpondiente
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("5"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=155)
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("6"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=155)
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("7"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=340)
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("8"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=340)
+
+    # Back to menu de busqueda, para buscar algo de nuevo
+    botonB = tk.Button(ventana, image=botonBack, width=60,
+                       command=MenuMalla, borderwidth=0, cursor="heart")
+    botonB.place(x=747, y=11, height=69)
+
+    # Create a Button to call close()
+    tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
+              width=35, height=40, cursor="heart").place(x=6, y=3)
+
+    # Go to other plantilla
+    botonB = tk.Button(ventana, image=botonGo, width=60,
+                       borderwidth=0, cursor="heart", command=MenuMalla3)
+    botonB.place(x=806, y=22, height=55)
+
+
+def MenuMalla3():  # Menu cuando haya elegido que desea ver la mall
+
+    for ele in ventana.winfo_children():
+        ele.destroy()
+    interfaz = tk.Canvas(ventana)
+    interfaz.pack()
+    label1 = tk.Label(interfaz, image=menuMalla3)
+    label1.pack()
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("9"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=180)
+
+    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("10"), width=0, height=0,
+             font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=180)
+
+    # Back to menu de busqueda, para buscar algo de nuevo
+    botonB = tk.Button(ventana, image=botonBack, width=60,
+                       command=MenuMalla2, borderwidth=0, cursor="heart")
+    botonB.place(x=750, y=11, height=69)
+
+    # Create a Button to call close()
+    tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
+              width=35, height=40, cursor="heart").place(x=6, y=3)
+
 
 
 
@@ -276,12 +372,7 @@ def MenuActividades():  # Menu de actividades extracurriculares
               width=50, height=50, cursor="heart").place(x=10, y=3)
 
     # Imprimir la información del txt como string
-    with open("archivos_txt/txtActividadesExtra.txt") as fname:
-        lines = fname.readlines()
-    # Conver list to str
-    string = "".join([str(item) for item in lines])
-    tk.Label(ventana, bg="white", text=string, width=50, height=10,
-             font=("Brown-courier", 14, "italic"), justify="left").place(x=310, y=218)
+    Actividades.imprimirActividades(ventana)
 
 
 def MenuRating():  # Menu de rating zone
@@ -302,14 +393,8 @@ def MenuRating():  # Menu de rating zone
               width=35, height=30, cursor="heart").place(x=10, y=5)
 
     # Imprimir la información del txt como string
-    with open("archivos_txt/txtRating.txt") as fname:
-        lines = fname.readlines()
-    # Conver list to str
-    string = "• ".join([str(item) for item in lines])
-    tk.Label(ventana, bg="gray77", text="• "+string, width=30, height=6,
-             font=("Brown-courier", 14, "italic"), justify="left").place(x=80, y=257)
-    
-    
+    Rating.imprimirRating(ventana)
+
     def agrega ():
         mat = entrada.get()
         if mat != "":
