@@ -5,5 +5,5 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 1. Observe what extra activities you could do in the university
 2. `Search` the semester you want to observe
      
-# Class diagram
+### Class diagram
 <img src="DiagramaPhoto.png" alt="Diagrama"/>
