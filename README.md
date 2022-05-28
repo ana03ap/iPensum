@@ -1,4 +1,6 @@
-<img src="dataRM/icon.png" alt="iPensum"/>
+<div align="center">
+<img src="dataRM/icon.png" alt="iPensum" style="width: 90%;"/>
+</div><br/>
 
 ### What iPensum allows you to do?
 iPensum will give you an unforgettable experience, where you as a user would be able to:
@@ -10,9 +12,17 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 
 ### Class diagram
-<img src="dataRM/DiagramaPhoto.png" alt="Diagrama"/>
+<img src="dataRM/DiagramaPhoto.png" alt="classDiagram"/>
 
 ## Are you ready?
 ### Basic functionalities of the app
-hola
+-Choose the option that you want to look for
 
+<div align="center">
+<img src="dataRM/busqueda.png" alt="Searching" style="width: 90%;"/>
+</div><br/>
+
+-Observe the curricular subjects of the career 
+<div align="center">
+<img src="dataRM/mallaCurrricular.png" alt="CurricularS" style="width: 90%;"/>
+</div><br/>
