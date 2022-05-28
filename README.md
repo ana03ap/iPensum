@@ -16,13 +16,13 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 ## Are you ready?
 ### Basic functionalities of the app
--Choose the option that you want to look for
+- Choose the option that you want to look for
 
 <div align="center">
 <img src="dataRM/busqueda.png" alt="Searching" style="width: 90%;"/>
 </div><br/>
 
--Observe the curricular subjects of the career 
+- Observe the curricular subjects of the career 
 <div align="center">
 <img src="dataRM/mallaCurricular.png" alt="CurricularS" style="width: 90%;"/>
 </div><br/>
