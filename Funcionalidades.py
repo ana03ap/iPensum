@@ -278,7 +278,7 @@ class Semestre():
                         fieldbackground="silver")
 
 class Actividades():
-    def imprimirActividades(ventana):
+    def imprimirActividades(self,ventana):
         with open("archivos_txt/txtActividadesExtra.txt") as fname:
          lines = fname.readlines()
          # Conver list to str
