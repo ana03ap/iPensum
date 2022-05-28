@@ -1,4 +1,4 @@
-<img src="icon.png" alt="iPensum"/>
+<img src="dataRM/icon.png" alt="iPensum"/>
 
 ### What iPensum allows you to do?
 iPensum will give you an unforgettable experience, where you as a user would be able to:
@@ -10,7 +10,7 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 
 ### Class diagram
-<img src="DiagramaPhoto.png" alt="Diagrama"/>
+<img src="dataRM/DiagramaPhoto.png" alt="Diagrama"/>
 
 ## Are you ready?
 
