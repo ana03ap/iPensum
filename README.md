@@ -28,3 +28,8 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 <div align="center">
 <img src="dataRM/mallaCurricular.png" alt="CurricularS" style="width: 80%;"/>
 </div><br/>
+
+- Enter the semester you want to look for
+<div align="center">
+<img src="dataRM/busqSemester.png" alt="SearchSemester" style="width: 80%;"/>
+</div><br/>
