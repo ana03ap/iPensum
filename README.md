@@ -12,17 +12,19 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 
 ### Class diagram
+<div align="center">
 <img src="dataRM/DiagramaPhoto.png" alt="classDiagram"/>
+</div><br/>
 
 ## Are you ready?
 ### Basic functionalities of the app
 - Choose the option that you want to look for
 
-<div align="left">
-<img src="dataRM/busqueda.png" alt="Searching" style="width: 70%;"/>
+<div align="center">
+<img src="dataRM/busqueda.png" alt="Searching" style="width: 80%;"/>
 </div><br/>
 
 - Observe the curricular subjects of the career 
-<div align="left">
-<img src="dataRM/mallaCurricular.png" alt="CurricularS" style="width: 70%;"/>
+<div align="center">
+<img src="dataRM/mallaCurricular.png" alt="CurricularS" style="width: 80%;"/>
 </div><br/>
