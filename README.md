@@ -13,4 +13,5 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 <img src="dataRM/DiagramaPhoto.png" alt="Diagrama"/>
 
 ## Are you ready?
+### Basic functionalities of the App
 
