@@ -109,10 +109,10 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
     # CAMPO DE TEXTO PARA LOGUEARSE
     entradaUser = StringVar()
     campo = Entry(ventana, textvariable=entradaUser,
-                  width=20, borderwidth=0, font=('Ubuntu', 14, "italic")).place(x=457, y=279, height=24)
+                  width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14)).place(x=457, y=279, height=24)
     entradaCode = StringVar()
     campo2 = Entry(ventana, textvariable=entradaCode,
-                   width=20, borderwidth=0, font=('Ubuntu', 14, "italic"), validate="key", validatecommand=(ventana.register(Estudiantes.validar_cod), "%S")).place(x=457, y=352, height=24)
+                   width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14), validate="key", validatecommand=(ventana.register(Estudiantes.validar_cod), "%S")).place(x=457, y=352, height=24)
 
     # LEER TXT DE LOGUEO PARA STUDENT
     filename = ("archivos_txt/txtLogin.txt")
