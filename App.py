@@ -112,7 +112,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
                   width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14)).place(x=457, y=279, height=24)
     entradaCode = StringVar()
     campo2 = Entry(ventana, textvariable=entradaCode,
-                   width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14), validate="key", validatecommand=(ventana.register(Estudiantes.validar_cod), "%S")).place(x=457, y=352, height=24)
+                   width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14), validate="key", validatecommand=(ventana.register(Estudiantes.validarCod), "%S")).place(x=457, y=352, height=24)
 
     # LEER TXT DE LOGUEO PARA STUDENT
     filename = ("archivos_txt/txtLogin.txt")
@@ -220,25 +220,25 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
             tapar.place(x=400, y=240, height=30)
             if result == "Primer semestre":
                 # se crea la tabla por semestre ingresado
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Segundo semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Tercer semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Cuarto semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Quinto semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Sexto semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Septimo semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Octavo semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Noveno semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
             elif result == "Decimo semestre":
-                Semestre.imprimirSemestre(label1, result)
+                Semestre.mostrarSemestre(label1, result)
 
     entrada = StringVar()
     semestreOP = Entry(ventana, textvariable=entrada, width=45, bg="gray62", borderwidth=0,
@@ -372,7 +372,7 @@ def MenuActividades():  # Menu de actividades extracurriculares
               width=50, height=50, cursor="heart").place(x=10, y=3)
 
     # Imprimir la información del txt como string
-    Actividades.imprimirActividades(ventana)
+    Actividades.mostrarActividades(ventana)
 
 
 def MenuRating():  # Menu de rating zone
@@ -393,9 +393,9 @@ def MenuRating():  # Menu de rating zone
               width=35, height=30, cursor="heart").place(x=10, y=5)
 
     # Imprimir la información del txt como string
-    Rating.imprimirRating(ventana)
+    Rating.mostrarRating(ventana)
 
-    def agrega ():
+    def addSubject ():
         mat = entrada.get()
         if mat != "":
              lstMaterias.insert(END,entrada.get())
@@ -406,7 +406,7 @@ def MenuRating():  # Menu de rating zone
     entrada = StringVar()
     
     txtMateria = Entry(ventana,textvariable=entrada,width=24, bg = "gray61", borderwidth=0, font=('Ubuntu', 12, "italic"), fg = "gray20").place (x=525, y= 235)
-    btnAgregar = Button (ventana, image = botonAgg, height=40,width=40,command=agrega, borderwidth=0).place(x=750, y=226)
+    btnAgregar = Button (ventana, image = botonAgg, height=40,width=40,command=addSubject, borderwidth=0).place(x=750, y=226)
     
 def MenuInstrucciones():  # Instrucciones de la app
 

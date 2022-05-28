@@ -16,7 +16,7 @@ skinparam class{
 
 class Estudiante {
 + codigoEstudiantil: int 
-Verifycode()
+validarCod()
 }
 
 
@@ -31,13 +31,12 @@ class Materia {
 
 Class MallaCurricular { 
 + materias : List [Materia]
-PrintMalla()
+mostrarMalla()
 }
 
 Class Semester {
-
-Search()
-PrintSemester()
++ materias : List [Materia.nombre]
+mostrarSemester()
 }
 
 
@@ -52,13 +51,13 @@ Class Obligatoria {
 }
 
 Class ActividadesExtra {
-+ tipo: Textra 
-PrintActivities()
++ tipo: String
+mostrarActividades()
 }
 
 Class Rating {
-Recommendation()
-AddSubject()
+mostrarRating()
+addSubject()
 }
 
 

@@ -6,7 +6,7 @@ class Estudiantes():  # si me sirve
     def __init__(self, text):  # text es el código
         self.text = text
 
-    def validar_cod(text: str):
+    def validarCod(text: str):
         return text.isdecimal()  # devuelve verdadero si es numero
 
     def login(ventana, MenuBusqueda):
@@ -18,7 +18,7 @@ class Estudiantes():  # si me sirve
                       width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14)).place(x=457, y=279, height=24)
         entradaCode = StringVar()
         campo2 = Entry(ventana, textvariable=entradaCode,
-                       width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14), validate="key", validatecommand=(ventana.register(Estudiantes.validar_cod), "%S")).place(x=457, y=352, height=24)  # se exporta y queda la función llamada desde estudiantes
+                       width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14), validate="key", validatecommand=(ventana.register(Estudiantes.validarCod), "%S")).place(x=457, y=352, height=24)  # se exporta y queda la función llamada desde estudiantes
 
     # LEER TXT DE LOGUEO PARA STUDENT
         filename = ("archivos_txt/txtLogin.txt")
@@ -197,7 +197,7 @@ class Semestre():
                 "Noveno",
                 "Décimo"]
 
-    def imprimirSemestre(self, label1, semestre: str):
+    def mostrarSemestre(self, label1, semestre: str):
         from tkinter import ttk
         # ABRIR TXT DE MATERIAS, ESTE ES EL TXT DE LA INFO DE CADA MATERIA EN CADA SEM
         txtM = []
@@ -278,7 +278,7 @@ class Semestre():
                         fieldbackground="silver")
 
 class Actividades():
-    def imprimirActividades(self,ventana):
+    def mostrarActividades(self,ventana):
         with open("archivos_txt/txtActividadesExtra.txt") as fname:
          lines = fname.readlines()
          # Conver list to str
@@ -287,7 +287,7 @@ class Actividades():
              font=("Bahnschrift SemiBold Condensed", 16), justify="left").place(x=310, y=218)
 
 class Rating():  # clase rating pero cre
-    def imprimirRating(self, ventana):
+    def mostrarRating(self, ventana):
         # Imprimir la información del txt como string
         with open("archivos_txt/txtRating.txt") as fname:
             lines = fname.readlines()
