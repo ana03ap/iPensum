@@ -17,7 +17,7 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 ### Class diagram
 <div align="center">
-<img src="dataRM/DiagramaPhoto.png" alt="classDiagram" style="width: 80%;"/>
+<img src="dataRM/DiagramaPhoto.png" alt="classDiagram" style="width: 70%;"/>
 </div><br/>
 
 # Are you ready?
