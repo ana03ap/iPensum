@@ -16,26 +16,25 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 <img src="dataRM/DiagramaPhoto.png" alt="classDiagram"/>
 </div><br/>
 
-## Are you ready?
-### Basic functionalities of the app
-- Choose the option that you want to look for
+# Are you ready?
+## Basic functionalities of the app
 
+### - Choose the option that you want to look for
 <div align="center">
 <img src="dataRM/busqueda.png" alt="Searching" style="width: 80%;"/>
 </div><br/>
 
-- Observe the curricular subjects of the career 
+### - Observe the curricular subjects of the career 
 <div align="center">
 <img src="dataRM/mallaCurricular.png" alt="CurricularS" style="width: 80%;"/>
 </div><br/>
 
-- Enter the semester you want to look for
+### - Enter the semester you want to look for
 <div align="center">
 <img src="dataRM/busqSemester.png" alt="SearchSemester" style="width: 80%;"/>
 </div><br/>
 
-- Observe the extra activities that offers you the university <div align="center">
+### - Observe the extra activities that offers you the university <div align="center">
 <div align="center">
 <img src="dataRM/extraAct.png" alt="extraActivities" style="width: 80%;"/>
 </div><br/>
-### Hola 
