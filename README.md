@@ -12,7 +12,7 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 ## Demo
 
-<img src="iPensum.gif" alt="demo"/>
+<img src="dataRM/iPensum.gif" alt="demo"/>
 
 ### Class diagram
 <div align="center">
