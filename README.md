@@ -1,18 +1,13 @@
 <img src="icon.png" alt="iPensum"/>
 
-## ¿Qué puedes hacer como usuario en iPensum?
-- Permite elegir lo que desea buscar (Materia, Semestre específico, etc)
-    - Task #1 
-        acceder como estudiante o como invitado.
-    - Task #2
-       validacion de campos vacios cuando se inicia sesión como estudiante.
-    - Task #3 
-       desplegar las opciones y escoger a su preferencia.
-    - Task #4 
-       botón de regreso
-       
-    ## ¿Cómo verificar el funcionamiento de está aplicación?
-     Inicialmente, se debe ingresar a la aplicación y se escoge la manera en la que se desea iniciar, puede iniciar sesión como estudiante o entrar como invitado. Al          inciar sesión como invitado, le permite escoger lo que desea buscar (malla, materia, actividades extra, etc); por otro lado, al iniciar sesion como estudiante            debe loguearse escribiendo su usuario y código estudiantil, cabe desctacar que si no ingresa nada no le permitirá realizar su búsqueda. Despues de ingresar los          datos del  estudiantes, debe hundir "Login" y podrá escoger lo que desea buscar (de igual forma como se realizó al iniciar sesión como invitado). 
-     
-# Diagrama UML
+### What iPensum allows you to do?
+iPensum will give you an unforgettable experience, where you as a user would be able to:
+1. Observe what extra activities you could do in the university
+2. `Search` the semester you want to observe
+3. Obseve the best subjects according to some students in the career
+4. `Add` your favorites subjects that `draw` your attention
+5. Look the curricular subjects of the career
+
+
+### Class diagram
 <img src="DiagramaPhoto.png" alt="Diagrama"/>
