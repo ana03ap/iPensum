@@ -12,7 +12,7 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 ## Demo
 
-[![Demo](ipensum/ipensum.gif)](https://github.com/ana03ap/iPensum/)
+<img src="iPensum.gif" alt="demo"/>
 
 ### Class diagram
 <div align="center">
