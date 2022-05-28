@@ -24,5 +24,5 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 
 -Observe the curricular subjects of the career 
 <div align="center">
-<img src="dataRM/mallaCurrricular.png" alt="CurricularS" style="width: 90%;"/>
+<img src="dataRM/mallaCurricular.png" alt="CurricularS" style="width: 90%;"/>
 </div><br/>
