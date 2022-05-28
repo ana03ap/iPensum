@@ -168,7 +168,7 @@ def MenuBusqueda():  # En este menu, puede elegir que desea buscar
 
     # RETURN MALLA
     botonM = tk.Button(ventana, image=botonMalla, width=190,
-                       borderwidth=0, cursor="heart")
+                       borderwidth=0, command=MenuMalla, cursor="heart")
     botonM.place(x=476, y=284, height=20)
     # RETURN SEMESTRE ESPECIFICO
     botonS = tk.Button(ventana, image=botonSemestre, width=225,
