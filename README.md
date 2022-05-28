@@ -6,7 +6,7 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 2. `Search` the semester you want to observe
 3. Obseve the best subjects according to some students in the career
 4. `Add` your favorites subjects that `draw` your attention
-5.  -Look- the curricular subjects of the career
+5. Look the curricular subjects of the career
 
 
 ### Class diagram
