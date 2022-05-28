@@ -33,3 +33,9 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 <div align="center">
 <img src="dataRM/busqSemester.png" alt="SearchSemester" style="width: 80%;"/>
 </div><br/>
+
+- Observe the extra activities that offers you the university <div align="center">
+<div align="center">
+<img src="dataRM/extraAct.png" alt="extraActivities" style="width: 80%;"/>
+</div><br/>
+### Hola 
