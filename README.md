@@ -19,10 +19,10 @@ iPensum will give you an unforgettable experience, where you as a user would be 
 - Choose the option that you want to look for
 
 <div align="center">
-<img src="dataRM/busqueda.png" alt="Searching" style="width: 90%;"/>
+<img src="dataRM/busqueda.png" alt="Searching" style="width: 60%;"/>
 </div><br/>
 
 - Observe the curricular subjects of the career 
 <div align="center">
-<img src="dataRM/mallaCurricular.png" alt="CurricularS" style="width: 90%;"/>
+<img src="dataRM/mallaCurricular.png" alt="CurricularS" style="width: 60%;"/>
 </div><br/>
