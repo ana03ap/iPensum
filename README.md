@@ -1,6 +1,6 @@
 <img src="icon.png" alt="iPensum"/>
 
-## ¿Qué puedes hacer como usuario en iPensum?
+## What iPensum allows you to do?
 - Permite elegir lo que desea buscar (Materia, Semestre específico, etc)
     - Task #1 
         acceder como estudiante o como invitado.
