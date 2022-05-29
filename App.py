@@ -1,15 +1,13 @@
-#se importan las librerías necesarias
+# se importan las librerías necesarias
 import tkinter as tk
-from tkinter import *
-from tkinter import Entry, Menu, StringVar, Widget, font
-from Funcionalidades import MallaCurricular, Rating, Actividades, Semestre, Estudiantes
+from tkinter import Entry, StringVar, END, Listbox, Button, GROOVE
+from Funcionalidades import MallaCurricular, RatingOb, Actividadesob, Semestreob, Estudiantes
 
-#instanciar objetos 
-Malla = MallaCurricular() 
-Rating = Rating()
-Actividades = Actividades()
-Semestre = Semestre()
-
+# instanciar objetos
+Malla = MallaCurricular()
+RatingOb = RatingOb()
+Actividadesob = Actividadesob()
+Semestreob = Semestreob()
 
 
 # Propiedades del frame
@@ -50,7 +48,7 @@ botonMalla = tk.PhotoImage(file="imagenes/botonMalla.png")
 botonSemestre = tk.PhotoImage(file="imagenes/botonSemestre.png")
 botonActividades = tk.PhotoImage(file="imagenes/botonActividades.png")
 botonRating = tk.PhotoImage(file="imagenes/botonRating.png")
-botonAgg = tk.PhotoImage(file = "imagenes/agg.png")
+botonAgg = tk.PhotoImage(file="imagenes/agg.png")
 botonCheck = tk.PhotoImage(file="imagenes/BotonCheck.png")
 
 
@@ -103,8 +101,7 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
     label2.pack()
 
     # VALIDAR QUE SOLO META NÚMEROS AL CODIGO ESTUDIANTIL
-    def validate_code(text: str):
-        return text.isdecimal()  # verdadero si es numero
+   
 
     # CAMPO DE TEXTO PARA LOGUEARSE
     entradaUser = StringVar()
@@ -220,25 +217,25 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
             tapar.place(x=400, y=240, height=30)
             if result == "Primer semestre":
                 # se crea la tabla por semestre ingresado
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Segundo semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Tercer semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Cuarto semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Quinto semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Sexto semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Septimo semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Octavo semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Noveno semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
             elif result == "Decimo semestre":
-                Semestre.mostrarSemestre(label1, result)
+                Semestreob.mostrarSemestre(label1, result)
 
     entrada = StringVar()
     semestreOP = Entry(ventana, textvariable=entrada, width=45, bg="gray62", borderwidth=0,
@@ -264,16 +261,16 @@ def MenuMalla():  # Menu cuando haya elegido que desea ver la malla
     label1 = tk.Label(interfaz, image=menuMalla)
     label1.pack()
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("1"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("1"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=160)
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("2"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("2"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=160)
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("3"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("3"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=340)
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("4"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("4"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=340)
 
     # Back to menu de busqueda, para buscar algo de nuevo
@@ -300,16 +297,16 @@ def MenuMalla2():  # Menu cuando haya elegido que desea ver la malla
     label1.pack()
 
     # los labels tienen los nombres del semestre correpondiente
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("5"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("5"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=155)
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("6"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("6"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=155)
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("7"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("7"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=340)
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("8"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("8"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=340)
 
     # Back to menu de busqueda, para buscar algo de nuevo
@@ -336,10 +333,10 @@ def MenuMalla3():  # Menu cuando haya elegido que desea ver la mall
     label1 = tk.Label(interfaz, image=menuMalla3)
     label1.pack()
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("9"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("9"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=180)
 
-    tk.Label(ventana, bg="white", text="• " + Malla.imprimirMalla("10"), width=0, height=0,
+    tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("10"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=540, y=180)
 
     # Back to menu de busqueda, para buscar algo de nuevo
@@ -350,8 +347,6 @@ def MenuMalla3():  # Menu cuando haya elegido que desea ver la mall
     # Create a Button to call close()
     tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
               width=35, height=40, cursor="heart").place(x=6, y=3)
-
-
 
 
 def MenuActividades():  # Menu de actividades extracurriculares
@@ -372,7 +367,7 @@ def MenuActividades():  # Menu de actividades extracurriculares
               width=50, height=50, cursor="heart").place(x=10, y=3)
 
     # Imprimir la información del txt como string
-    Actividades.mostrarActividades(ventana)
+    Actividadesob.mostrarActividades(ventana)
 
 
 def MenuRating():  # Menu de rating zone
@@ -393,21 +388,24 @@ def MenuRating():  # Menu de rating zone
               width=35, height=30, cursor="heart").place(x=10, y=5)
 
     # Imprimir la información del txt como string
-    Rating.mostrarRating(ventana)
+    RatingOb.mostrarRating(ventana)
 
-    def addSubject ():
+    def addSubject():
         mat = entrada.get()
         if mat != "":
-             lstMaterias.insert(END,entrada.get())
-        
-  
-    lstMaterias = Listbox(ventana, width=33, height = 8, bg = "gray77", relief = GROOVE, bd=0, font=('Ubuntu',12, "italic"));
-    lstMaterias.place (x=490,y=270)
+            lstMaterias.insert(END, entrada.get())
+
+    lstMaterias = Listbox(ventana, width=33, height=8, bg="gray77",
+                          relief=GROOVE, bd=0, font=('Ubuntu', 12, "italic"))
+    lstMaterias.place(x=490, y=270)
     entrada = StringVar()
-    
-    txtMateria = Entry(ventana,textvariable=entrada,width=24, bg = "gray61", borderwidth=0, font=('Ubuntu', 12, "italic"), fg = "gray20").place (x=525, y= 235)
-    btnAgregar = Button (ventana, image = botonAgg, height=40,width=40,command=addSubject, borderwidth=0).place(x=750, y=226)
-    
+
+    txtMateria = Entry(ventana, textvariable=entrada, width=24, bg="gray61", borderwidth=0, font=(
+        'Ubuntu', 12, "italic"), fg="gray20").place(x=525, y=235)
+    btnAgregar = Button(ventana, image=botonAgg, height=40, width=40,
+                        command=addSubject, borderwidth=0).place(x=750, y=226)
+
+
 def MenuInstrucciones():  # Instrucciones de la app
 
     for ele in ventana.winfo_children():
@@ -429,7 +427,6 @@ def MenuInstrucciones():  # Instrucciones de la app
 def close():   # Cerrar ventana en donde estemos
     # ventana.destroy()
     ventana.quit()
-
 
 
 MainMenu()

@@ -8,7 +8,7 @@ skinparam classAttributeIconSize 0
 
 skinparam class{
     
-    BackgroundColor bab
+    BackgroundColor grey
     BorderColor Black
     ArrowColor Black
 }
@@ -30,12 +30,12 @@ class Materia {
 }
 
 Class MallaCurricular { 
-+ materias : List [Materia]
++ materias : malla[Materia]
 mostrarMalla()
 }
 
-Class Semester {
-+ materias : List [Materia.nombre]
+Class Semestre {
++ materias : txtS[Materia]
 mostrarSemester()
 }
 
@@ -60,13 +60,13 @@ mostrarRating()
 addSubject()
 }
 
-
-
 Estudiante - MallaCurricular
-MallaCurricular " 1   "--- "many" Materia :  < go in 
+
+MallaCurricular "1..*" *---"many" Materia :  < go in 
+Semestre " 1..*" *--- "many" Materia :  < go in 
+MallaCurricular - Semestre
 Materia "  * " <|--- "  1..*  " Obligatoria
 Materia "1..*    " <|--- "   *" Electiva
-Materia "1..*    " <|--- "   *" Semester
 Estudiante "1..*" --* "1  " ActividadesExtra
 Materia - Rating
 
