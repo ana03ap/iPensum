@@ -78,7 +78,7 @@ class MallaCurricular():
         return string
 
 
-class Semestreob():
+class Semestre():
 
     # imprime semestre por semestre dependiendo al ingresado
     def mostrarSemestre(self, label1, semestre: str):
@@ -166,7 +166,7 @@ class Semestreob():
                         fieldbackground="silver")
 
 
-class Actividadesob():
+class Actividades():
     # imprime las actividades que se pueden realizar
     def mostrarActividades(self, ventana):
         with open("archivos_txt/txtActividadesExtra.txt") as fname:
@@ -177,7 +177,7 @@ class Actividadesob():
                  font=("Bahnschrift SemiBold Condensed", 16), justify="left").place(x=310, y=218)
 
 
-class RatingOb():  # clase rating pero cre
+class Rating():  # clase rating pero cre
     def mostrarRating(self, ventana):
         # Imprimir la información del txt como string
         with open("archivos_txt/txtRating.txt") as fname:
