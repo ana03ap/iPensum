@@ -6,7 +6,7 @@ from tkinter import Entry,  StringVar, END, CENTER
 class Estudiantes():
     def __init__(self, text):  # text es el código
         self.text = text
-        print ("hola")
+        
     def validarCod(text: str):
         return text.isdecimal()  # devuelve verdadero si es numero
 
@@ -79,7 +79,7 @@ class MallaCurricular():
 
 
 class Semestre():
-
+    
     # imprime semestre por semestre dependiendo al ingresado
     def mostrarSemestre(self, label1, semestre: str):
         from tkinter import ttk
