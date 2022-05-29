@@ -1,13 +1,13 @@
 # se importan las librerías necesarias
 import tkinter as tk
 from tkinter import Entry, StringVar, END, Listbox, Button, GROOVE
-from Funcionalidades import MallaCurricular, RatingOb, Actividadesob, Semestreob, Estudiantes
+from Funcionalidades import MallaCurricular, Rating, Actividades, Semestre, Estudiantes
 
 # instanciar objetos
 Malla = MallaCurricular()
-RatingOb = RatingOb()
-Actividadesob = Actividadesob()
-Semestreob = Semestreob()
+RatingOb = Rating()
+Actividadesob = Actividades()
+Semestreob = Semestre()
 
 
 # Propiedades del frame
