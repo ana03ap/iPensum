@@ -424,7 +424,7 @@ def MenuInstrucciones():  # Instrucciones de la app
               width=35, height=50, cursor="heart").place(x=10, y=3)
 
 
-def close():   # Cerrar ventana en donde estemos
+def close():   # Cerrar ventana hundiendo la x en la esquina superior izquierda
     # ventana.destroy()
     ventana.quit()
 
