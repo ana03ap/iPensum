@@ -1,4 +1,4 @@
-@startuml "UML Project"
+@startuml "Class diagram"
 
 skinparam monochrome flase 
 skinparam handwritten false 
