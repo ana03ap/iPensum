@@ -199,8 +199,7 @@ class Materia(): # Clase materia, los atributos es la información de básica qu
         self.tipoM = tipoM
         self.semestre = semestre
         self.nombreMat = nombreMat
-        self.numeroCred = numeroCred
-        self.preferencia = preferencia
+
 
 
 class Electiva(Materia):  #Clase electivas, la cual herede de materia porque las electivas tambien son materias 
@@ -222,12 +221,12 @@ class Electiva(Materia):  #Clase electivas, la cual herede de materia porque las
                  "Elect. estudios del Caribe",
                  "Elect. profesional III"]
 
-    def __init__(self, nombreElect, tipoM, preferencia, semestre):
-        super().__init__(tipoM, preferencia, semestre)
+    def __init__(self, nombreElect, tipoM, semestre):
+        super().__init__(tipoM, semestre)
         self.nombreElect = nombreElect
 
 
 class Obligatoria(Materia): #Clase obligatorias la cual herede de materia porque las obligatorias tambien son materias 
-    def __init__(self, nombreA, tipoM, preferencia, semestre):
-        super().__init__(tipoM, preferencia, semestre)
+    def __init__(self, nombreA, tipoM, semestre):
+        super().__init__(tipoM,semestre)
         self.nombreA = nombreA
