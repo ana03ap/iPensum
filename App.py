@@ -9,7 +9,6 @@ RatingOb = Rating()
 Actividadesob = Actividades()
 Semestreob = Semestre()
 
-
 # Propiedades del frame
 ventana = tk.Tk()
 ventana.geometry("870x500+230+100")
@@ -23,11 +22,8 @@ main = tk.PhotoImage(file="imagenes/main.png")
 Busqueda = tk.PhotoImage(file="imagenes/MenuBusqueda.png")
 busqE = tk.PhotoImage(file="imagenes/busqE.png")
 errorC = tk.PhotoImage(file="imagenes/CamposVacios.png")
-botonLogin = tk.PhotoImage(file="imagenes/botonLogin.png")
 Instrucciones = tk.PhotoImage(file="imagenes/Instrucciones.png")
-botonSeguir = tk.PhotoImage(file="imagenes/botonSeguirmain.png")
 borrar = tk.PhotoImage(file="imagenes/BotonBorrar.png")
-Cerrar = tk.PhotoImage(file="imagenes/BotonClose.png")
 InvalidCode = tk.PhotoImage(file="imagenes/codeInvalid.png")
 menuExtra = tk.PhotoImage(file="imagenes/menuExtra.png")
 menuRating = tk.PhotoImage(file="imagenes/menuRating.png")
@@ -39,6 +35,9 @@ menuMalla2 = tk.PhotoImage(file="imagenes/menuMalla2.png")
 menuMalla3 = tk.PhotoImage(file="imagenes/menuMalla3.png")
 
 # BOTONES
+botonSeguir = tk.PhotoImage(file="imagenes/botonSeguirmain.png")
+Cerrar = tk.PhotoImage(file="imagenes/BotonClose.png")
+botonLogin = tk.PhotoImage(file="imagenes/botonLogin.png")
 botonGo = tk.PhotoImage(file="imagenes/botonGo.png")
 botonGuest = tk.PhotoImage(file="imagenes/botonGuest.png")
 botonStudent = tk.PhotoImage(file="imagenes/botonStudent.png")
@@ -92,6 +91,7 @@ def MenuInicial():  # La manera en la que desea ingresar (GUEST OR STUDENT)
 
 
 def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LOGUEO-
+    # deberá ingresar un usuario x y su código estudiantil
 
     for ele in ventana.winfo_children():
         ele.destroy()
@@ -100,18 +100,15 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
     label2 = tk.Label(interfaz, image=busqE)
     label2.pack()
 
-    # VALIDAR QUE SOLO META NÚMEROS AL CODIGO ESTUDIANTIL
-   
-
     # CAMPO DE TEXTO PARA LOGUEARSE
-    entradaUser = StringVar()
+    entradaUser = StringVar()  # usuario ingresado
     campo = Entry(ventana, textvariable=entradaUser,
                   width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14)).place(x=457, y=279, height=24)
-    entradaCode = StringVar()
+    entradaCode = StringVar()  # código ingresado
     campo2 = Entry(ventana, textvariable=entradaCode,
                    width=20, borderwidth=0, font=('Bahnschrift SemiBold SemiConden', 14), validate="key", validatecommand=(ventana.register(Estudiantes.validarCod), "%S")).place(x=457, y=352, height=24)
 
-    # LEER TXT DE LOGUEO PARA STUDENT
+    # LEER TXT DE LOGUEO PARA VERIFICAR EL CÓDIGO ESTUDIANTIL
     filename = ("archivos_txt/txtLogin.txt")
     with open(filename) as file:
         lines = file.readlines()
@@ -119,8 +116,6 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
     txtL = []
     for x in lines:
         txtL.append(x.rstrip())
-    # print (txtL) # lista con los códigos estudiantiles
-
     # VALIDAR QUE LOS CAMPOS NO ESTÉN VACIOS, SI LO ESTAN SALDRÁ UNA ADVERTENCIA
 
     def login():
@@ -130,14 +125,14 @@ def MenuLogueo():  # Menu que me lleva al inicio de sesión como estudiante - LO
             Error = tk.Label(ventana, image=errorC, borderwidth=0, width=190)
             Error.place(x=447, y=394, height=45)
 
-        else:  # sino esta vacio
+        else:  # Los campos no están vacios
             # Buscar en el txt que ese código sea de la universidad del Norte
             if code in txtL:
                 MenuBusqueda()  # Si el código se encuentra que pase a la siguiente
-            else:
+            else:  # Si el código no se encuentra, saldrá en pantalla una advertencia
                 Error = tk.Label(ventana, image=InvalidCode,
                                  borderwidth=0, width=194)
-                # sino, el sale una advertencia
+                # sino, le sale una advertencia
                 Error.place(x=440, y=394, height=45)
 
     # BOTON LOGIN
@@ -171,7 +166,6 @@ def MenuBusqueda():  # En este menu, puede elegir que desea buscar
     botonS = tk.Button(ventana, image=botonSemestre, width=225,
                        borderwidth=0, command=MenuEleccionSemestre, cursor="heart")
     botonS.place(x=482, y=307, height=49)
-
     # RETURN ACTIVIDADES EXTRACURRICULARES
     botonA = tk.Button(ventana, image=botonActividades,
                        width=310, borderwidth=0, command=MenuActividades, cursor="heart")
@@ -199,9 +193,9 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
     label1 = tk.Label(interfaz, image=menuEleccion)
     label1.pack()
 
-    def getTextInput():
+    def getTextInput():  # Validando lo que ingresa el estudiante
         sw = 0
-        result = entrada.get()  # entrada que ingresa el usuario
+        result = entrada.get()  # Entrada que ingresa el usuario
         if result == "":  # aca valido que no este vacio
             Error = tk.Label(ventana, image=Warning, borderwidth=0)
             Error.place(x=400, y=240, height=30)
@@ -216,7 +210,7 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
             tapar = tk.Label(ventana, image=Twarning, borderwidth=0)
             tapar.place(x=400, y=240, height=30)
             if result == "Primer semestre":
-                # se crea la tabla por semestre ingresado
+                # se crea la tabla por semestre ingresado con los obejtos instanciados de las clases
                 Semestreob.mostrarSemestre(label1, result)
             elif result == "Segundo semestre":
                 Semestreob.mostrarSemestre(label1, result)
@@ -236,14 +230,14 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
                 Semestreob.mostrarSemestre(label1, result)
             elif result == "Decimo semestre":
                 Semestreob.mostrarSemestre(label1, result)
-
+    # Lo que ingresa el estudiante
     entrada = StringVar()
     semestreOP = Entry(ventana, textvariable=entrada, width=45, bg="gray62", borderwidth=0,
                        font=('Bahnschrift SemiBold SemiConden', 14), fg="black").place(x=145, y=187, height=45)
     tk.Button(ventana, height=49, width=57, image=botonCheck, borderwidth=0,
               command=getTextInput).place(x=85, y=185)
 
-    # Back to menu de busqueda, para buscar algo de nuevo
+    # Back to menu de busqueda, para buscar algo nuevo, es decir, semestre, malla, acts extra, etc.
     botonB = tk.Button(ventana, image=botonBack, width=60,
                        command=MenuBusqueda, borderwidth=0, cursor="heart")
     botonB.place(x=750, y=11, height=72)
@@ -253,14 +247,14 @@ def MenuEleccionSemestre():  # Elección de semestre que desea ver
               width=50, height=50, cursor="heart").place(x=10, y=3)
 
 
-def MenuMalla():  # Menu cuando haya elegido que desea ver la malla
+def MenuMalla():  # Menu cuando haya elegido malla curricular
     for ele in ventana.winfo_children():
         ele.destroy()
     interfaz = tk.Canvas(ventana)
     interfaz.pack()
     label1 = tk.Label(interfaz, image=menuMalla)
     label1.pack()
-
+    # los labels tienen los nombres del semestre correpondiente
     tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("1"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=160)
 
@@ -318,7 +312,7 @@ def MenuMalla2():  # Menu cuando haya elegido que desea ver la malla
     tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
               width=35, height=40, cursor="heart").place(x=6, y=3)
 
-    # Go to other plantilla
+    # Se dirige para el siguiente menu donde se encuentran los otros semestres
     botonB = tk.Button(ventana, image=botonGo, width=60,
                        borderwidth=0, cursor="heart", command=MenuMalla3)
     botonB.place(x=806, y=22, height=55)
@@ -332,7 +326,7 @@ def MenuMalla3():  # Menu cuando haya elegido que desea ver la mall
     interfaz.pack()
     label1 = tk.Label(interfaz, image=menuMalla3)
     label1.pack()
-
+    # los labels tienen los nombres del semestre correpondiente
     tk.Label(ventana, bg="white", text="• " + Malla.mostrarMalla("9"), width=0, height=0,
              font=("Bahnschrift SemiBold Condensed", 13), justify="left").place(x=90, y=180)
 
@@ -357,6 +351,9 @@ def MenuActividades():  # Menu de actividades extracurriculares
     label1 = tk.Label(interfaz, image=menuExtra)
     label1.pack()
 
+    # Imprimir la información del txt como string
+    Actividadesob.mostrarActividades(ventana)
+
     # BACK TO MAIN
     botonB = tk.Button(ventana, image=botonBack, width=60,
                        command=MenuBusqueda, borderwidth=0, cursor="heart")
@@ -365,9 +362,6 @@ def MenuActividades():  # Menu de actividades extracurriculares
     # Create a Button to call close()
     tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
               width=50, height=50, cursor="heart").place(x=10, y=3)
-
-    # Imprimir la información del txt como string
-    Actividadesob.mostrarActividades(ventana)
 
 
 def MenuRating():  # Menu de rating zone
@@ -378,18 +372,10 @@ def MenuRating():  # Menu de rating zone
     label1 = tk.Label(interfaz, image=menuRating)
     label1.pack()
 
-    # BACK TO MAIN
-    botonB = tk.Button(ventana, image=botonBack, width=60,
-                       command=MenuBusqueda, borderwidth=0, cursor="heart")
-    botonB.place(x=750, y=11, height=69)
-
-    # Create a Button to call close()
-    tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
-              width=35, height=30, cursor="heart").place(x=10, y=5)
-
     # Imprimir la información del txt como string
     RatingOb.mostrarRating(ventana)
 
+    # Permite al usuario agregar sus materias favoritas
     def addSubject():
         mat = entrada.get()
         if mat != "":
@@ -405,8 +391,17 @@ def MenuRating():  # Menu de rating zone
     btnAgregar = Button(ventana, image=botonAgg, height=40, width=40,
                         command=addSubject, borderwidth=0).place(x=750, y=226)
 
+    # BACK TO MAIN
+    botonB = tk.Button(ventana, image=botonBack, width=60,
+                       command=MenuBusqueda, borderwidth=0, cursor="heart")
+    botonB.place(x=750, y=11, height=69)
 
-def MenuInstrucciones():  # Instrucciones de la app
+    # Create a Button to call close()
+    tk.Button(ventana, image=Cerrar, command=close, borderwidth=0,
+              width=35, height=30, cursor="heart").place(x=10, y=5)
+
+
+def MenuInstrucciones():  # Interfaz de instrucciones de la app
 
     for ele in ventana.winfo_children():
         ele.destroy()
