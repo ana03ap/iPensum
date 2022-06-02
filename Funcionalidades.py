@@ -199,6 +199,7 @@ class Materia(): # Clase materia, los atributos es la información de básica qu
         self.tipoM = tipoM
         self.semestre = semestre
         self.nombreMat = nombreMat
+        self.numeroCred = numeroCred
 
 
 
