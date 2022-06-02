@@ -60,15 +60,15 @@ mostrarRating()
 addSubject()
 }
 
-Estudiante - MallaCurricular
 
-MallaCurricular "1..*" *---"many" Materia :  < go in 
-Semestre " 1..*" *--- "many" Materia :  < go in 
-MallaCurricular - Semestre
+
+MallaCurricular "1..*" *---"many  " Materia :  < go in 
+Semestre " 1..*" *--- "     many" Materia :  < go in 
 Materia "  * " <|--- "  1..*  " Obligatoria
 Materia "1..*    " <|--- "   *" Electiva
 Estudiante "1..*" --* "1  " ActividadesExtra
 Materia - Rating
+Estudiante -- MallaCurricular
 
 
 
