@@ -187,7 +187,7 @@ class Rating():  # clase rating pero cre
         tk.Label(ventana, bg="gray77", text="• " + string, width=30, height=6,
                  font=("Bahnschrift SemiBold SemiConden", 15), justify="left").place(x=80, y=257)
 
-        # revisar
+        
     def addSubject(self, entrada, lstMaterias):  # agrega materias que el usuario escriba
         mat = entrada.get()
         if mat != "":
